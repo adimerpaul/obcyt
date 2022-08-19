@@ -1,7 +1,7 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 93433:
+/***/ 61204:
 /***/ ((__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -3954,59 +3954,59 @@ const Competidor_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(Competi
 
 runtime_auto_import_default()(Competidorvue_type_script_lang_js, 'components', {QPage: QPage/* default */.Z,QTable: QTable/* default */.Z,QBtn: QBtn/* default */.Z,QInput: QInput/* default */.Z,QIcon: QIcon/* default */.Z,QTd: QTd/* default */.Z,QBtnDropdown: QBtnDropdown/* default */.Z,QList: QList/* default */.Z,QItem: QItem/* default */.Z,QItemSection: QItemSection/* default */.Z,QItemLabel: QItemLabel/* default */.Z,QImg: QImg/* default */.Z,QDialog: QDialog/* default */.Z,QCard: QCard/* default */.Z,QCardSection: QCardSection/* default */.Z,QSpace: QSpace/* default */.Z,QForm: QForm/* default */.Z,QUploader: QUploader/* default */.Z,QCheckbox: QCheckbox/* default */.Z,QSelect: QSelect/* default */.Z});runtime_auto_import_default()(Competidorvue_type_script_lang_js, 'directives', {ClosePopup: ClosePopup/* default */.Z});
 
-;// CONCATENATED MODULE: ./node_modules/@quasar/app-webpack/lib/webpack/loader.js.transform-quasar-imports.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-2.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/@quasar/app-webpack/lib/webpack/loader.vue.auto-import-quasar.js??ruleSet[0].use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[1]!./src/pages/Creacion.vue?vue&type=template&id=1f2daf7c
+;// CONCATENATED MODULE: ./node_modules/@quasar/app-webpack/lib/webpack/loader.js.transform-quasar-imports.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-2.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/@quasar/app-webpack/lib/webpack/loader.vue.auto-import-quasar.js??ruleSet[0].use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[1]!./src/pages/Creacion.vue?vue&type=template&id=28a103de
 
-const Creacionvue_type_template_id_1f2daf7c_hoisted_1 = {
+const Creacionvue_type_template_id_28a103de_hoisted_1 = {
   class: "row"
 };
 
-const Creacionvue_type_template_id_1f2daf7c_hoisted_2 = /*#__PURE__*/(0,runtime_core_esm_bundler/* createElementVNode */._)("div", {
+const Creacionvue_type_template_id_28a103de_hoisted_2 = /*#__PURE__*/(0,runtime_core_esm_bundler/* createElementVNode */._)("div", {
   class: "col-12 text-h6 text-center"
 }, " GENERAR IMPRESION DE CERTIFICADOS Y CREDENCIALES MASIVOS ", -1);
 
-const Creacionvue_type_template_id_1f2daf7c_hoisted_3 = {
+const Creacionvue_type_template_id_28a103de_hoisted_3 = {
   class: "col-4"
 };
-const Creacionvue_type_template_id_1f2daf7c_hoisted_4 = {
+const Creacionvue_type_template_id_28a103de_hoisted_4 = {
   class: "col-4"
 };
-const Creacionvue_type_template_id_1f2daf7c_hoisted_5 = {
+const Creacionvue_type_template_id_28a103de_hoisted_5 = {
   class: "col-4"
 };
 
-const Creacionvue_type_template_id_1f2daf7c_hoisted_6 = /*#__PURE__*/(0,runtime_core_esm_bundler/* createElementVNode */._)("div", {
+const Creacionvue_type_template_id_28a103de_hoisted_6 = /*#__PURE__*/(0,runtime_core_esm_bundler/* createElementVNode */._)("div", {
   id: "qr_code",
   style: {
     "display": "none"
   }
 }, null, -1);
 
-function Creacionvue_type_template_id_1f2daf7c_render(_ctx, _cache, $props, $setup, $data, $options) {
+function Creacionvue_type_template_id_28a103de_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_q_btn = (0,runtime_core_esm_bundler/* resolveComponent */.up)("q-btn");
 
   const _component_q_page = (0,runtime_core_esm_bundler/* resolveComponent */.up)("q-page");
 
   return (0,runtime_core_esm_bundler/* openBlock */.wg)(), (0,runtime_core_esm_bundler/* createBlock */.j4)(_component_q_page, null, {
-    default: (0,runtime_core_esm_bundler/* withCtx */.w5)(() => [(0,runtime_core_esm_bundler/* createElementVNode */._)("div", Creacionvue_type_template_id_1f2daf7c_hoisted_1, [Creacionvue_type_template_id_1f2daf7c_hoisted_2, (0,runtime_core_esm_bundler/* createElementVNode */._)("div", Creacionvue_type_template_id_1f2daf7c_hoisted_3, [(0,runtime_core_esm_bundler/* createVNode */.Wm)(_component_q_btn, {
+    default: (0,runtime_core_esm_bundler/* withCtx */.w5)(() => [(0,runtime_core_esm_bundler/* createElementVNode */._)("div", Creacionvue_type_template_id_28a103de_hoisted_1, [Creacionvue_type_template_id_28a103de_hoisted_2, (0,runtime_core_esm_bundler/* createElementVNode */._)("div", Creacionvue_type_template_id_28a103de_hoisted_3, [(0,runtime_core_esm_bundler/* createVNode */.Wm)(_component_q_btn, {
       class: "full-width",
       color: "green",
       label: "CERTIFICADOS PARTICIPANTES",
       onClick: $options.participanteClick
-    }, null, 8, ["onClick"])]), (0,runtime_core_esm_bundler/* createElementVNode */._)("div", Creacionvue_type_template_id_1f2daf7c_hoisted_4, [(0,runtime_core_esm_bundler/* createVNode */.Wm)(_component_q_btn, {
+    }, null, 8, ["onClick"])]), (0,runtime_core_esm_bundler/* createElementVNode */._)("div", Creacionvue_type_template_id_28a103de_hoisted_4, [(0,runtime_core_esm_bundler/* createVNode */.Wm)(_component_q_btn, {
       class: "full-width",
       color: "accent",
       label: "CERTIFICADOS CLUB",
       onClick: $options.clubClick
-    }, null, 8, ["onClick"])]), (0,runtime_core_esm_bundler/* createElementVNode */._)("div", Creacionvue_type_template_id_1f2daf7c_hoisted_5, [(0,runtime_core_esm_bundler/* createVNode */.Wm)(_component_q_btn, {
+    }, null, 8, ["onClick"])]), (0,runtime_core_esm_bundler/* createElementVNode */._)("div", Creacionvue_type_template_id_28a103de_hoisted_5, [(0,runtime_core_esm_bundler/* createVNode */.Wm)(_component_q_btn, {
       class: "full-width",
       color: "yellow",
       label: "CREDENCIALES",
       onClick: $options.credencialClick
-    }, null, 8, ["onClick"])])]), Creacionvue_type_template_id_1f2daf7c_hoisted_6]),
+    }, null, 8, ["onClick"])])]), Creacionvue_type_template_id_28a103de_hoisted_6]),
     _: 1
   });
 }
-;// CONCATENATED MODULE: ./src/pages/Creacion.vue?vue&type=template&id=1f2daf7c
+;// CONCATENATED MODULE: ./src/pages/Creacion.vue?vue&type=template&id=28a103de
 
 ;// CONCATENATED MODULE: ./node_modules/@quasar/app-webpack/lib/webpack/loader.js.transform-quasar-imports.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-2.use[0]!./node_modules/@quasar/app-webpack/lib/webpack/loader.vue.auto-import-quasar.js??ruleSet[0].use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[1]!./src/pages/Creacion.vue?vue&type=script&lang=js
 
@@ -4062,7 +4062,36 @@ var Creacionvue_type_script_lang_js_QRCode = __webpack_require__(32316);
   },
 
   methods: {
-    async credencialUser1() {
+    async credencialUser1(nombre, codigo, foto) {
+      this.loading = true;
+      this.$api.get('base64/' + foto).then(res => {
+        this.loading = false;
+        let foto = res.data;
+        let doc = new jspdf_es_min/* jsPDF */.kH('landscape', null, 'letter');
+        let logo = new Image();
+        logo.src = 'frontal.png';
+        doc.addImage(logo, 'PNG', 7 + 69.7 * 0.95 * 3, 10 + 97.1 * 0.95 * 0, 69.7 * 0.95, 97.1 * 0.95);
+        doc.addImage(foto, 'PNG', 29 + 23 * 3 + 69.7 * 0.95 * 3 - 23 * 3, 32 + 23 * 0, 23, 23);
+        logo.src = 'trasera.png';
+        doc.addImage(logo, 'PNG', 7 + 69.7 * 0.95 * 3, 10 + 97.1 * 0.95 * 1, 69.7 * 0.95, 97.1 * 0.95);
+        doc.setFont('courier', 'bold');
+        doc.setFontSize(11);
+        doc.text(nombre == null ? '' : nombre, 41 + 69.7 * 0.95 * 3, 70, {
+          maxWidth: 50,
+          align: "center"
+        });
+        doc.text(codigo == null ? '' : codigo, 41 + 69.7 * 0.95 * 3, 83, 'center');
+        doc.setFontSize(10);
+        doc.text(codigo == null ? '' : codigo, 41 + 69.7 * 0.95 * 3, 150, 'center');
+        doc.text(nombre == null ? '' : nombre, 41 + 69.7 * 0.95 * 3, 160, {
+          maxWidth: 50,
+          align: "center"
+        });
+        doc.save('Credencial ' + nombre + date/* default.formatDate */.ZP.formatDate(new Date(), 'HHmmss') + '.pdf');
+      });
+    },
+
+    async credencialUser000() {
       let doc = new jspdf_es_min/* jsPDF */.kH('landscape', null, 'letter');
       let logo = new Image();
       let logo2 = new Image();
@@ -4148,7 +4177,10 @@ var Creacionvue_type_script_lang_js_QRCode = __webpack_require__(32316);
       this.$api.get(`participante`).then(res => {
         this.loading = false;
         this.participantes = res.data;
-        this.credencialUser1();
+        this.participantes.forEach(r => {
+          this.credencialUser1(r.nombre1, r.fechaNac1, r.foto1);
+          this.credencialUser1(r.nombre2, r.fechaNac2, r.foto2);
+        });
       });
     },
 
@@ -4331,7 +4363,7 @@ var Creacionvue_type_script_lang_js_QRCode = __webpack_require__(32316);
 
 
 ;
-const Creacion_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(Creacionvue_type_script_lang_js, [['render',Creacionvue_type_template_id_1f2daf7c_render]])
+const Creacion_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(Creacionvue_type_script_lang_js, [['render',Creacionvue_type_template_id_28a103de_render]])
 
 /* harmony default export */ const Creacion = (Creacion_exports_);
 ;
@@ -5373,9 +5405,9 @@ webpackContext.id = 46700;
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, [736], () => (__webpack_require__(93433)))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, [736], () => (__webpack_require__(61204)))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=app.8c54780a.js.map
+//# sourceMappingURL=app.7693d104.js.map
