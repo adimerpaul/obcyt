@@ -111,9 +111,9 @@ export default {
           doc.addPage();
         this.$api.get('base64/'+participante.foto2).then(res=>{
 
-        this.foto=res.data
+        this.foto2=res.data
       })
-        foto2=this.foto
+        foto2=this.foto2
         doc.addImage(logo, 'PNG', 7+69.7*0.95*3, 10+97.1*0.95*0, 69.7*0.95, 97.1*0.95);
         doc.addImage(foto2, 'PNG', 29+23*3+69.7*0.95*3-23*3, 32+23*0, 23, 23);
         doc.addImage(logo2, 'PNG', 7+69.7*0.95*3, 10+97.1*0.95*1, 69.7*0.95, 97.1*0.95);
