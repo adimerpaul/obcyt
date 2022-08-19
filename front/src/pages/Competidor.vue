@@ -65,6 +65,12 @@
           </ul>
         </q-td>
       </template>
+      <template v-slot:body-cell-foto="props">
+        <q-td :props="props" auto-width>
+          <a :href="url+'../imagenes/'+ props.row.foto1"><q-img :src="url+'../imagenes/'+ props.row.foto1" width="100px" height="100px"/></a>
+          <a :href="url+'../imagenes/'+ props.row.foto2"><q-img :src="url+'../imagenes/'+ props.row.foto2" width="100px" height="100px"/></a>
+        </q-td>
+      </template>
       <template v-slot:body-cell-Categorias="props">
         <q-td :props="props" auto-width>
           <ul style="list-style: none">
@@ -302,6 +308,7 @@ export default {
   name: `Competidor`,
   data () {
     return {
+      url:process.env.API,
       dato:{},
       store:useCounterStore(),
       loading:false,
@@ -329,6 +336,7 @@ export default {
         {label: 'club', field: 'club',name:'club',sortable:true},
         {label: 'Categorias', field: 'Categorias',name:'Categorias',align:'left',sortable:true},
         {label: 'id', field: 'id',name:'id',sortable:true},
+        {label: 'foto', field: 'foto',name:'foto',sortable:true},
       ],
       participante:{
         fechaNac1:date.formatDate(new Date(), 'YYYY-MM-DD'),
@@ -491,7 +499,7 @@ export default {
         doc.text(codigo == null ? '' : codigo, 41+69.7*0.95*3, 150, 'center')
         doc.text(nombre == null ? '' : nombre, 41+69.7*0.95*3, 160, {maxWidth: 50, align: "center"});
 
-        doc.save('Credencial '+nombre+'.pdf')
+        doc.save('Credencial '+nombre+date.formatDate(new Date(),'HHmmss')+'.pdf')
         // window.open(doc.output('bloburl'), '_blank')
       })
     },
@@ -606,7 +614,7 @@ export default {
         // let base64Image = $('#qr_code img').attr('src');
         doc.addImage(qrImage, 'png', 235, 135, 25, 25);
         // console.log(producer)
-        doc.save('Certificado '+nom+'.pdf')
+        doc.save('Certificado '+nom+date.formatDate(new Date(),'HHmmss')+'.pdf')
         // window.open(doc.output('bloburl'), '_blank')
       }, 10);
     },
