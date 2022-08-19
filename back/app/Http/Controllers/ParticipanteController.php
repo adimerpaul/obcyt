@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Participante;
 use App\Http\Requests\StoreParticipanteRequest;
 use App\Http\Requests\UpdateParticipanteRequest;
+use App\Models\Puntos;
 
 class ParticipanteController extends Controller
 {
@@ -45,9 +46,9 @@ class ParticipanteController extends Controller
      * @param  \App\Models\Participante  $participante
      * @return \Illuminate\Http\Response
      */
-    public function show(Participante $participante)
+    public function show($categoria)
     {
-        //
+        return Puntos::where('categoria', $categoria)->with('user')->with('participante')->get();
     }
 
     /**

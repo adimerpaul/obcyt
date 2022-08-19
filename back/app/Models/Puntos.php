@@ -9,8 +9,24 @@ class Puntos extends Model
 {
     use HasFactory;
     protected $fillable= [
-        'nombre',
+        'categoria',
+        'descripcion',
         'punto',
+        'fecha',
         'participante_id',
+        'user_id',
     ];
+    public function participante(){
+        return $this->belongsTo(Participante::class);
+    }
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
+//    protected $hidden = [
+//        'id',
+//        'user_id',
+//        'participante_id',
+//        'created_at',
+//        'updated_at',
+//    ];
 }

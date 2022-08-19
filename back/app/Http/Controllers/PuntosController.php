@@ -36,7 +36,8 @@ class PuntosController extends Controller
      */
     public function store(StorePuntosRequest $request)
     {
-        //
+        $request['fecha']=now();
+        return Puntos::create($request->all());
     }
 
     /**
@@ -45,9 +46,10 @@ class PuntosController extends Controller
      * @param  \App\Models\Puntos  $puntos
      * @return \Illuminate\Http\Response
      */
-    public function show(Puntos $puntos)
+    public function show($participante_id)
     {
-        //
+        $puntos = Puntos::where('participante_id', $participante_id)->with('user')->get();
+        return $puntos;
     }
 
     /**
@@ -70,7 +72,7 @@ class PuntosController extends Controller
      */
     public function update(UpdatePuntosRequest $request, Puntos $puntos)
     {
-        //
+        $puntos->update($request->all());
     }
 
     /**
@@ -79,8 +81,9 @@ class PuntosController extends Controller
      * @param  \App\Models\Puntos  $puntos
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Puntos $puntos)
+    public function destroy($punto_id)
     {
-        //
+        $punto = Puntos::find($punto_id);
+        $punto->delete();
     }
 }

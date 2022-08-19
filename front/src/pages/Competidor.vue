@@ -4,7 +4,8 @@
   <div class="col-12">
     <q-table dense :rows="participantes" :columns="participanteColumns" :rows-per-page-options="[0]" :filter="participanteFilter">
       <template v-slot:top-right>
-        <q-btn color="green" @click="participanteDialog=true" icon="add_circle_outline" label="Registrar" />
+        <q-btn color="green" :loading="loading" @click="participanteDialog=true" icon="add_circle_outline" :label="$q.screen.lt.md?'':'Registrar'" />
+        <q-btn color="blue" :loading="loading" @click="participantesGet" icon="refresh" :label="$q.screen.lt.md?'':'Actualizar'" />
         <q-input dense outlined v-model="participanteFilter" placeholder="Buscar">
           <template v-slot:prepend>
             <q-icon name="search" />
@@ -13,7 +14,7 @@
       </template>
       <template v-slot:body-cell-Opciones="props">
         <q-td :props="props" auto-width>
-          <q-btn-dropdown color="primary" label="OPCIONES">
+          <q-btn-dropdown color="primary" :label="$q.screen.lt.md?'':'Opciones'">
             <q-list>
               <q-item clickable v-close-popup @click="participanteModificar(props.row)">
                 <q-item-section>
@@ -86,7 +87,6 @@
         </q-td>
       </template>
     </q-table>
-    <pre>{{participantes}}</pre>
   </div>
 </div>
 <q-dialog v-model="participanteDialog" full-width>
@@ -248,6 +248,45 @@
       </q-card-section>
     </q-card>
   </q-dialog>
+  <q-dialog v-model="participanteDatosDialog" full-width>
+    <q-card >
+      <q-card-section class="row items-center q-pb-none">
+        <div class="text-bold">{{participante.nombre1}}-{{participante.nombre2}}</div>
+        <q-space />
+        <q-btn icon="close" flat round dense v-close-popup />
+      </q-card-section>
+      <q-card-section>
+        <q-form @submit.prevent="datoInsert">
+          <div class="row">
+            <div class="col-12 col-sm-3">
+              <q-select required label="seleccionar Categoria" v-model="dato.categoria" dense outlined :options="datoOpcion"/>
+            </div>
+            <div class="col-12 col-sm-3">
+              <q-input dense outlined label="descipcion" v-model="dato.descripcion"/>
+            </div>
+            <div class="col-12 col-sm-3">
+              <q-input dense type="number" requerido outlined step="0.01" label="punto" v-model="dato.punto"/>
+            </div>
+            <div class="col-12 col-sm-3">
+              <div class="row">
+                <div class="col-6"><q-btn label="Agregar" icon="o_send" :loading="loading" type="submit" color="green-9" class="full-width" /></div>
+                <div class="col-6"><q-btn label="Actualizar" icon="refresh" :loading="loading" @click="datos(this.participante)" color="info" class="full-width" /></div>
+              </div>
+            </div>
+            <div class="col-12">
+              <q-table dense :rows-per-page-options="[0]" :rows="puntos" :columns="puntosColumns">
+                <template v-slot:body-cell-opcion="props">
+                  <q-td auto-width :props="props">
+                    <q-btn dense flat color="red-9" icon="o_delete" @click="datoEliminar(props.row)"/>
+                  </q-td>
+                </template>
+              </q-table>
+            </div>
+          </div>
+        </q-form>
+      </q-card-section>
+    </q-card>
+  </q-dialog>
   <div id="qr_code" style="display: none"></div>
 </q-page>
 </template>
@@ -257,25 +296,38 @@ import {date} from "quasar";
 import moment from "moment";
 import {jsPDF} from "jspdf";
 import $ from "jquery";
-
+import {useCounterStore} from "stores/example-store";
 export default {
   name: `Competidor`,
   data () {
     return {
+      dato:{},
+      store:useCounterStore(),
       loading:false,
+      participanteDatosDialog:false,
       participanteFilter:'',
+      puntos:[],
       participanteDialog:false,
       participanteUpdateDialog:false,
       participantes: [],
+      datoOpcion:[],
+      puntosColumns:[
+        {name:'opcion',label:'opcion',field:'opcion',sortable:true,align:'left'},
+        {name:'categoria',label:'categoria',field:'categoria',sortable:true,align:'left'},
+        {name:'descripcion',label:'descripcion',field:'descripcion',sortable:true,align:'left'},
+        {name:'punto',label:'punto',field:'punto',sortable:true},
+        {name:'user',label:'user',field:row=>row.user.name,sortable:true,align:'left'},
+        {name:'fecha',label:'fecha',field:'fecha',sortable:true},
+      ],
       participanteColumns:[
         {label: 'Opciones', field: 'Opciones',name:'Opciones',sortable:true},
-        {label: 'id', field: 'id',name:'id',sortable:true},
-        {label: 'categoria', field: 'categoria',name:'categoria',sortable:true},
         {label: 'Participantes', field: 'Participantes',name:'Participantes',sortable:true,align: 'left'},
+        {label: 'categoria', field: 'categoria',name:'categoria',sortable:true},
         {label: 'nombre1', field: 'nombre1',name:'nombre1',sortable:true,classes:'hidden', headerClasses:'hidden',},
         {label: 'nombre2', field: 'nombre2',name:'nombre2',sortable:true,classes:'hidden', headerClasses:'hidden',},
         {label: 'club', field: 'club',name:'club',sortable:true},
         {label: 'Categorias', field: 'Categorias',name:'Categorias',align:'left',sortable:true},
+        {label: 'id', field: 'id',name:'id',sortable:true},
       ],
       participante:{
         fechaNac1:date.formatDate(new Date(), 'YYYY-MM-DD'),
@@ -302,6 +354,60 @@ export default {
     this.participantesGet()
   },
   methods:{
+    datoEliminar(dato){
+      this.$q.dialog({
+        title: 'Eliminar',
+        message: '¿Desea eliminar el registro?',
+        cancel: true,
+        persistent: true,
+        ok: {
+          label: 'Eliminar',
+          color: 'red-9',
+        }
+      }).onOk(()=>{
+        this.loading = true
+        this.$api.delete('puntos/'+dato.id).then(()=>{
+          this.loading = false
+          this.dato = {}
+          this.datos(this.participante)
+        })
+      });
+
+
+    },
+    datoInsert(){
+
+      if (this.dato.categoria == undefined) {
+        this.$q.notify({
+          color: 'red-6',
+          textColor: 'white',
+          icon: 'error',
+          message: 'Seleccione una categoria',
+          position: 'top',
+          timeout: 4000
+        })
+        return false
+      }
+      if (this.dato.punto == undefined) {
+        this.$q.notify({
+          color: 'red-6',
+          textColor: 'white',
+          icon: 'error',
+          message: 'Ingrese un punto',
+          position: 'top',
+          timeout: 4000
+        })
+        return false
+      }
+      this.loading = true
+      this.dato.participante_id = this.participante.id
+      this.dato.user_id = this.store.user.id
+      this.$api.post('puntos',this.dato).then(res=>{
+        this.loading = false
+        this.dato={}
+        this.datos(this.participante)
+      })
+    },
     certificadoClub(participante){
       this.participante=participante
       this.printCertificado(participante.club,participante)
@@ -314,7 +420,33 @@ export default {
       this.participante=participante
       this.printCertificado(participante.nombre2,participante)
     },
+    datos(participante){
+      this.loading = true
+      participante.controlRCPrimaria==1?this.datoOpcion.push('controlRCPrimaria'):1
+      participante.seguidordelineaAmateur==1?this.datoOpcion.push('seguidordelineaAmateur'):1
+      participante.minisumoRcAmateur==1?this.datoOpcion.push('minisumoRcAmateur'):1
+      participante.minisumoAutonomoAmateur==1?this.datoOpcion.push('minisumoAutonomoAmateur'):1
+      participante.carreradeInsectosAmateur==1?this.datoOpcion.push('carreradeInsectosAmateur'):1
+      participante.peleadeRobotsAmateur==1?this.datoOpcion.push('peleadeRobotsAmateur'):1
+      participante.minisumoAutonomoProfesional==1?this.datoOpcion.push('minisumoAutonomoProfesional'):1
+      participante.minisumoRcProfesional==1?this.datoOpcion.push('minisumoRcProfesional'):1
+      participante.microsumoProfesional==1?this.datoOpcion.push('microsumoProfesional'):1
+      participante.seguidordelineaProfesional==1?this.datoOpcion.push('seguidordelineaProfesional'):1
+      participante.carreradeInsectosProfesional==1?this.datoOpcion.push('carreradeInsectosProfesional'):1
+      participante.creatividadeInnovacionTecnologicaProyectos==1?this.datoOpcion.push('creatividadeInnovacionTecnologicaProyectos'):1
+      participante.guerradeRobotsProfesional1Lb==1?this.datoOpcion.push('guerradeRobotsProfesional1Lb'):1
+      participante.autoaControlRCBluetooth==1?this.datoOpcion.push('autoaControlRCBluetooth'):1
+      participante.robotSoccer==1?this.datoOpcion.push('robotSoccer'):1
+      this.participante=participante
+      this.participanteDatosDialog=true
+      this.puntos=[]
+      this.$api.get(`puntos/${participante.id}`).then((res)=>{
+        this.puntos=res.data
+        this.loading = false
+      })
+    },
     credencialUser1(participante){
+
       this.participante=participante
       let doc = new jsPDF('landscape',null,'letter');
       let logo = new Image();
@@ -536,7 +668,9 @@ export default {
       })
     },
     participantesGet(){
+      this.loading=true
       this.$api.get(`participante`).then(res => {
+        this.loading=false
         this.participantes = res.data
       })
     }

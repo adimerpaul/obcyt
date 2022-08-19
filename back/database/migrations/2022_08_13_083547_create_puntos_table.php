@@ -15,11 +15,14 @@ return new class extends Migration
     {
         Schema::create('puntos', function (Blueprint $table) {
             $table->id();
-            $table->string('tipo')->nullable();
-            $table->string('nombre')->nullable();
+            $table->string('categoria')->nullable();
+            $table->string('descripcion')->nullable();
             $table->double('punto',11,2)->nullable();
             $table->unsignedBigInteger('participante_id')->nullable();
+            $table->dateTime('fecha')->nullable();
             $table->foreign('participante_id')->references('id')->on('participantes');
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

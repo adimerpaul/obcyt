@@ -86,6 +86,15 @@
             <q-item-label caption>Consultas de registros</q-item-label>
           </q-item-section>
         </q-item>
+        <q-item clickable exact to="creacion" v-if="store.isLoggedIn&&store.user.tipo=='ADMINISTRADOR'">
+          <q-item-section avatar>
+            <q-icon name="o_print" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>Impresion</q-item-label>
+            <q-item-label caption>Todos los carnets y credenciales</q-item-label>
+          </q-item-section>
+        </q-item>
         <q-item clickable exact @click="logout" v-if="store.isLoggedIn">
           <q-item-section avatar>
             <q-icon name="power_settings_new" />

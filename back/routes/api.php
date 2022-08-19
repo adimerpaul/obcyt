@@ -30,5 +30,5 @@ Route::group(['middleware'=>'auth:sanctum'],function (){
     Route::resource('user',\App\Http\Controllers\UserController::class);
     Route::resource('participante',\App\Http\Controllers\ParticipanteController::class);
     Route::post('/upload', [\App\Http\Controllers\UploadController::class,'upload']);
-
+    Route::resource('puntos',\App\Http\Controllers\PuntosController::class);
 });
