@@ -83,7 +83,7 @@ module.exports = configure(function (ctx) {
       env: {
         API: ctx.dev
           ? 'http://localhost:8000/api/'
-          : 'https://www.bruiz.miganancia.cf/api/'
+          : 'https://www.bobcyt.miganancia.cf/api/'
       }
 
     },
