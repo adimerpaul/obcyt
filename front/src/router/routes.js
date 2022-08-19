@@ -4,6 +4,7 @@ import User from "pages/User";
 import Producer from "pages/Producer";
 import Consultas from "pages/Consultas";
 import Competidor from "pages/Competidor";
+import Creacion from "pages/Creacion";
 const routes = [
   {
     path: '/',
@@ -14,6 +15,7 @@ const routes = [
       { path: 'user', component: User,meta: {requiresAuth: true} },
       { path: 'competidores', component: Competidor,meta: {requiresAuth: true} },
       { path: 'consultas', component: Consultas,meta: {requiresAuth: true} },
+      { path: 'creacion', component: Creacion,meta: {requiresAuth: true} },
     ]
   },
 
