@@ -48,6 +48,7 @@ export default {
       participantes: [],
       datoOpcion:[],
         foto:'',
+        foto2:'',
       participante:{
         fechaNac1:date.formatDate(new Date(), 'YYYY-MM-DD'),
         fechaNac2:date.formatDate(new Date(), 'YYYY-MM-DD'),
