@@ -14,7 +14,7 @@
     
   </div>  
   <div class="col-4">
-  <q-btn class="full-width" color="yellow" label="CREDENCIALES" />
+  <q-btn class="full-width" color="yellow" label="CREDENCIALES" @click="credencialClick"/>
     
   </div>
 </div>
@@ -47,7 +47,7 @@ export default {
       participanteUpdateDialog:false,
       participantes: [],
       datoOpcion:[],
-
+        foto:'',
       participante:{
         fechaNac1:date.formatDate(new Date(), 'YYYY-MM-DD'),
         fechaNac2:date.formatDate(new Date(), 'YYYY-MM-DD'),
@@ -73,125 +73,69 @@ export default {
     this.participantesGet()
   },
   methods:{
-    datoEliminar(dato){
-      this.$q.dialog({
-        title: 'Eliminar',
-        message: '¿Desea eliminar el registro?',
-        cancel: true,
-        persistent: true,
-        ok: {
-          label: 'Eliminar',
-          color: 'red-9',
-        }
-      }).onOk(()=>{
-        this.loading = true
-        this.$api.delete('puntos/'+dato.id).then(()=>{
-          this.loading = false
-          this.dato = {}
-          this.datos(this.participante)
-        })
-      });
 
-
-    },
-    datoInsert(){
-
-      if (this.dato.categoria == undefined) {
-        this.$q.notify({
-          color: 'red-6',
-          textColor: 'white',
-          icon: 'error',
-          message: 'Seleccione una categoria',
-          position: 'top',
-          timeout: 4000
-        })
-        return false
-      }
-      if (this.dato.punto == undefined) {
-        this.$q.notify({
-          color: 'red-6',
-          textColor: 'white',
-          icon: 'error',
-          message: 'Ingrese un punto',
-          position: 'top',
-          timeout: 4000
-        })
-        return false
-      }
-      this.loading = true
-      this.dato.participante_id = this.participante.id
-      this.dato.user_id = this.store.user.id
-      this.$api.post('puntos',this.dato).then(res=>{
-        this.loading = false
-        this.dato={}
-        this.datos(this.participante)
-      })
-    },
-    certificadoClub(participante){
-      this.participante=participante
-      this.printCertificado(participante.club,participante)
-    },
-    certificadoUser1(participante){
-      this.participante=participante
-      this.printCertificado(participante.nombre1,participante)
-    },
-    certificadoUser2(participante){
-      this.participante=participante
-      this.printCertificado(participante.nombre2,participante)
-    },
-
-    async credencialUser1(nombre,codigo,participante,foto) {
-      this.loading=true
-      this.$api.get('base64/'+foto).then(res=>{
-        this.loading=false
-        let foto=res.data
+    async credencialUser1() {
         let doc = new jsPDF('landscape', null, 'letter');
         let logo = new Image();
+        let logo2 = new Image();
         logo.src = 'frontal.png';
-        // doc.addImage(logo, 'PNG', 7+69.7*0.95*0, 10+97.1*0.95*0, 69.7*0.95, 97.1*0.95);
-        // doc.addImage(logo, 'PNG', 7+69.7*0.95*1, 10+97.1*0.95*0, 69.7*0.95, 97.1*0.95);
-        // doc.addImage(logo, 'PNG', 7+69.7*0.95*2, 10+97.1*0.95*0, 69.7*0.95, 97.1*0.95);
+        logo2.src = 'trasera.png';
+        let foto=''
+        let foto2=''
+               for (const participante of this.participantes){
+
+        if(participante.nombre1!=null){
+      this.$api.get('base64/'+participante.foto1).then(res=>{
+         this.foto=res.data
+
+
+        // window.open(doc.output('bloburl'), '_blank')
+      })
+        foto=this.foto
         doc.addImage(logo, 'PNG', 7+69.7*0.95*3, 10+97.1*0.95*0, 69.7*0.95, 97.1*0.95);
-        // doc.addImage(foto, 'PNG', 29+23*0+69.7*0.95*0-23*0, 32+23*0, 23, 23);
-        // doc.addImage(foto, 'PNG', 29+23*1+69.7*0.95*1-23*1, 32+23*0, 23, 23);
-        // doc.addImage(foto, 'PNG', 29+23*2+69.7*0.95*2-23*2, 32+23*0, 23, 23);
         doc.addImage(foto, 'PNG', 29+23*3+69.7*0.95*3-23*3, 32+23*0, 23, 23);
-        logo.src = 'trasera.png';
-        // doc.addImage(logo, 'PNG', 7+69.7*0.95*0, 10+97.1*0.95*1, 69.7*0.95, 97.1*0.95);
-        // doc.addImage(logo, 'PNG', 7+69.7*0.95*1, 10+97.1*0.95*1, 69.7*0.95, 97.1*0.95);
-        // doc.addImage(logo, 'PNG', 7+69.7*0.95*2, 10+97.1*0.95*1, 69.7*0.95, 97.1*0.95);
-        doc.addImage(logo, 'PNG', 7+69.7*0.95*3, 10+97.1*0.95*1, 69.7*0.95, 97.1*0.95);
+        doc.addImage(logo2, 'PNG', 7+69.7*0.95*3, 10+97.1*0.95*1, 69.7*0.95, 97.1*0.95);
 
         doc.setFont('courier','bold')
         doc.setFontSize(11)
 
-        // doc.text(nombre == null ? '' : nombre, 41+69.7*0.95*0, 70, {maxWidth: 50, align: "center"});
-        // doc.text(codigo == null ? '' : codigo, 41+69.7*0.95*0, 83, 'center')
-        // doc.text(nombre == null ? '' : nombre, 41+69.7*0.95*1, 70, {maxWidth: 50, align: "center"});
-        // doc.text(codigo == null ? '' : codigo, 41+69.7*0.95*1, 83, 'center')
-        // doc.text(nombre == null ? '' : nombre, 41+69.7*0.95*2, 70, {maxWidth: 50, align: "center"});
-        // doc.text(codigo == null ? '' : codigo, 41+69.7*0.95*2, 83, 'center')
-        doc.text(nombre == null ? '' : nombre, 41+69.7*0.95*3, 70, {maxWidth: 50, align: "center"});
-        doc.text(codigo == null ? '' : codigo, 41+69.7*0.95*3, 83, 'center')
+        doc.text(participante.nombre1, 41+69.7*0.95*3, 70, {maxWidth: 50, align: "center"});
+        doc.text(participante.fechaNac1 == null ? '' : participante.fechaNac1, 41+69.7*0.95*3, 83, 'center')
 
         doc.setFontSize(10)
 
-        // doc.text(codigo == null ? '' : codigo, 41+69.7*0.95*0, 150, 'center')
-        // doc.text(nombre == null ? '' : nombre, 41+69.7*0.95*0, 160, {maxWidth: 50, align: "center"});
-        // doc.text(codigo == null ? '' : codigo, 41+69.7*0.95*1, 150, 'center')
-        // doc.text(nombre == null ? '' : nombre, 41+69.7*0.95*1, 160, {maxWidth: 50, align: "center"});
-        // doc.text(codigo == null ? '' : codigo, 41+69.7*0.95*2, 150, 'center')
-        // doc.text(nombre == null ? '' : nombre, 41+69.7*0.95*2, 160, {maxWidth: 50, align: "center"});
-        doc.text(codigo == null ? '' : codigo, 41+69.7*0.95*3, 150, 'center')
-        doc.text(nombre == null ? '' : nombre, 41+69.7*0.95*3, 160, {maxWidth: 50, align: "center"});
+        doc.text(participante.fechaNac1 == null ? '' : participante.fechaNac1, 41+69.7*0.95*3, 150, 'center')
+        doc.text(participante.fechaNac1, 41+69.7*0.95*3, 160, {maxWidth: 50, align: "center"});
+        }
+      if(participante.nombre2!=null){
+          doc.addPage();
+        this.$api.get('base64/'+participante.foto2).then(res=>{
 
-        doc.save('Credencial '+nombre+'.pdf')
-        // window.open(doc.output('bloburl'), '_blank')
+        this.foto=res.data
       })
+        foto2=this.foto
+        doc.addImage(logo, 'PNG', 7+69.7*0.95*3, 10+97.1*0.95*0, 69.7*0.95, 97.1*0.95);
+        doc.addImage(foto2, 'PNG', 29+23*3+69.7*0.95*3-23*3, 32+23*0, 23, 23);
+        doc.addImage(logo2, 'PNG', 7+69.7*0.95*3, 10+97.1*0.95*1, 69.7*0.95, 97.1*0.95);
+
+        doc.setFont('courier','bold')
+        doc.setFontSize(11)
+
+        doc.text(participante.nombre2, 41+69.7*0.95*3, 70, {maxWidth: 50, align: "center"});
+        doc.text(participante.fechaNac2 == null ? '' : participante.fechaNac2, 41+69.7*0.95*3, 83, 'center')
+
+        doc.setFontSize(10)
+
+        doc.text(participante.fechaNac2 == null ? '' : participante.fechaNac2, 41+69.7*0.95*3, 150, 'center')
+        doc.text(participante.fechaNac2, 41+69.7*0.95*3, 160, {maxWidth: 50, align: "center"});
+      }
+               doc.addPage();
+               }
+        doc.save('Credencial.pdf')
+
     },
-    credencialUser2(participante){
-      this.participante=participante
-    },
+
+
     participanteClick(){
       this.loading=true
       this.$api.get(`participante`).then(res => {
@@ -211,6 +155,14 @@ export default {
     },
 
 
+    credencialClick(){
+      this.loading=true
+      this.$api.get(`participante`).then(res => {
+        this.loading=false
+        this.participantes = res.data
+            this.credencialUser1()
+      })
+    },
 
     async printCertificado() {
       let doc = new jsPDF('landscape', null, 'letter');
