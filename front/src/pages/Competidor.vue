@@ -499,7 +499,7 @@ export default {
         doc.text(codigo == null ? '' : codigo, 41+69.7*0.95*3, 150, 'center')
         doc.text(nombre == null ? '' : nombre, 41+69.7*0.95*3, 160, {maxWidth: 50, align: "center"});
 
-        doc.save('Credencial '+nombre+'.pdf')
+        doc.save('Credencial '+nombre+date.formatDate(new Date(),'HHmmss')+'.pdf')
         // window.open(doc.output('bloburl'), '_blank')
       })
     },
@@ -614,7 +614,7 @@ export default {
         // let base64Image = $('#qr_code img').attr('src');
         doc.addImage(qrImage, 'png', 235, 135, 25, 25);
         // console.log(producer)
-        doc.save('Certificado '+nom+'.pdf')
+        doc.save('Certificado '+nom+date.formatDate(new Date(),'HHmmss')+'.pdf')
         // window.open(doc.output('bloburl'), '_blank')
       }, 10);
     },
