@@ -561,6 +561,7 @@ export default {
         this.participanteUpdateDialog = false
       })
     },
+    
     async printCertificado(nombre, participante) {
       let categorias = ''
       categorias += participante.controlRCPrimaria == 1 ? " controlRCPrimaria," : ''

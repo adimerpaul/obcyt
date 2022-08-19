@@ -10,7 +10,7 @@
     
   </div>  
   <div class="col-4">
-  <q-btn class="full-width" color="accent" label="CERTIFICADOS CLUB"  />
+  <q-btn class="full-width" color="accent" label="CERTIFICADOS CLUB"  @click="clubClick"/>
     
   </div>  
   <div class="col-4">
@@ -201,6 +201,15 @@ export default {
       })
     },
 
+        clubClick(){
+      this.loading=true
+      this.$api.get(`participante`).then(res => {
+        this.loading=false
+        this.participantes = res.data
+            this.printCertificadoclub()
+      })
+    },
+
 
 
     async printCertificado() {
@@ -306,6 +315,73 @@ export default {
 
     },
 
+    async printCertificadoclub() {
+      let doc = new jsPDF('landscape', null, 'letter');
+      let logo = new Image();
+      logo.src = 'certificado.jpg';
+
+       for (const participante of this.participantes){
+      let categorias = ''
+
+      categorias += participante.controlRCPrimaria == 1 ? " controlRCPrimaria," : ''
+      categorias += participante.seguidordelineaAmateur == 1 ? " seguidordelineaAmateur," : ''
+      categorias += participante.minisumoRcAmateur == 1 ? " minisumoRcAmateur," : ''
+      categorias += participante.minisumoAutonomoAmateur == 1 ? " minisumoAutonomoAmateur," : ''
+      categorias += participante.carreradeInsectosAmateur == 1 ? " carreradeInsectosAmateur," : ''
+      categorias += participante.peleadeRobotsAmateur == 1 ? " peleadeRobotsAmateur," : ''
+      categorias += participante.minisumoAutonomoProfesional == 1 ? " minisumoAutonomoProfesional," : ''
+      categorias += participante.minisumoRcProfesional == 1 ? " minisumoRcProfesional," : ''
+      categorias += participante.microsumoProfesional == 1 ? " microsumoProfesional," : ''
+      categorias += participante.seguidordelineaProfesional == 1 ? " seguidordelineaProfesional," : ''
+      categorias += participante.carreradeInsectosProfesional == 1 ? " carreradeInsectosProfesional," : ''
+      categorias += participante.creatividadeInnovacionTecnologicaProyectos == 1 ? " creatividadeInnovacionTecnologicaProyectos," : ''
+      categorias += participante.guerradeRobotsProfesional1Lb == 1 ? " guerradeRobotsProfesional1Lb," : ''
+      categorias += participante.autoaControlRCBluetooth == 1 ? " autoaControlRCBluetooth," : ''
+      categorias += participante.robotSoccer == 1 ? " robotSoccer," : ''
+
+      if(participante.club!=null){
+      doc.addImage(logo, 'JPEG', 0, 0, 280, 210);
+      doc.setFont('times')
+      doc.setFontSize(13, 'normal')
+      doc.text('Se otorga el presente certificado A:', 30, 70)
+      doc.setFontSize(20, 'bold')
+      doc.text(participante.club, 140, 80, 'center')
+      doc.setFontSize(13, 'normal')
+      doc.text('Por la participación en Olimpiada Boliviana de Ciencia y Tecnología BALLIVIANITOBOT en calidad de:', 30, 90)
+      doc.setFontSize(20, 'bold')
+      doc.text(participante.categoria == null ? '' : participante.categoria, 140, 100, 'center')
+      doc.setFontSize(13, 'normal')
+      doc.text("Con las participaciones en la(s) categoría(s):" + categorias, 30, 110, {
+        maxWidth: 220,
+        align: "justify"
+      }); // to justify
+
+      let nom=participante.club
+      let opts = {
+        errorCorrectionLevel: 'M',
+          type: 'png',
+          quality: 0.95,
+          width: 100,
+          margin: 1,
+          color: {
+          dark: '#000000',
+            light: '#FFF',
+        }
+      }
+      let qrImage = await QRCode.toDataURL("Nombre:"+nom+"\nCategoria: "+participante.categoria, opts)
+
+
+        // let base64Image = $('#qr_code img').attr('src');
+        doc.addImage(qrImage, 'png', 235, 135, 25, 25);
+        // window.open(doc.output('bloburl'), '_blank')
+      }
+
+   
+       doc.addPage();
+      }
+        doc.save('Certificado.pdf')
+
+    },
     participantesGet(){
       this.loading=true
       this.$api.get(`participante`).then(res => {
