@@ -108,7 +108,7 @@
             max-files="1"
             label="Ingresar imagen participante1"
             flat
-            max-file-size="2000000"
+            max-file-size="5000000"
             @rejected="onRejected"
             bordered
           />
@@ -123,7 +123,7 @@
             max-files="1"
             label="Ingresar imagen participante2"
             flat
-            max-file-size="2000000"
+            max-file-size="5000000"
             @rejected="onRejected"
             bordered
           />
@@ -140,7 +140,7 @@
             max-files="1"
             label="Ingresar imagen logo club"
             flat
-            max-file-size="2000000"
+            max-file-size="5000000"
             @rejected="onRejected"
             bordered
           />
@@ -188,7 +188,7 @@
                 max-files="1"
                 label="Ingresar imagen participante1"
                 flat
-                max-file-size="2000000"
+                max-file-size="5000000"
                 @rejected="onRejected"
                 bordered
               />
@@ -203,7 +203,7 @@
                 max-files="1"
                 label="Ingresar imagen participante2"
                 flat
-                max-file-size="2000000"
+                max-file-size="5000000"
                 @rejected="onRejected"
                 bordered
               />
@@ -220,7 +220,7 @@
                 max-files="1"
                 label="Ingresar imagen logo club"
                 flat
-                max-file-size="2000000"
+                max-file-size="5000000"
                 @rejected="onRejected"
                 bordered
               />
