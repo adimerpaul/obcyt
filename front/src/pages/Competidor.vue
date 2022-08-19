@@ -297,6 +297,7 @@ import moment from "moment";
 import {jsPDF} from "jspdf";
 import $ from "jquery";
 import {useCounterStore} from "stores/example-store";
+var QRCode = require('qrcode')
 export default {
   name: `Competidor`,
   data () {
@@ -445,38 +446,60 @@ export default {
         this.loading = false
       })
     },
-    credencialUser1(participante){
-
-      this.participante=participante
-      let doc = new jsPDF('landscape',null,'letter');
+    async credencialUser1(participante) {
+      let categorias = ''
+      categorias += participante.controlRCPrimaria == 1 ? " controlRCPrimaria," : ''
+      categorias += participante.seguidordelineaAmateur == 1 ? " seguidordelineaAmateur," : ''
+      categorias += participante.minisumoRcAmateur == 1 ? " minisumoRcAmateur," : ''
+      categorias += participante.minisumoAutonomoAmateur == 1 ? " minisumoAutonomoAmateur," : ''
+      categorias += participante.carreradeInsectosAmateur == 1 ? " carreradeInsectosAmateur," : ''
+      categorias += participante.peleadeRobotsAmateur == 1 ? " peleadeRobotsAmateur," : ''
+      categorias += participante.minisumoAutonomoProfesional == 1 ? " minisumoAutonomoProfesional," : ''
+      categorias += participante.minisumoRcProfesional == 1 ? " minisumoRcProfesional," : ''
+      categorias += participante.microsumoProfesional == 1 ? " microsumoProfesional," : ''
+      categorias += participante.seguidordelineaProfesional == 1 ? " seguidordelineaProfesional," : ''
+      categorias += participante.carreradeInsectosProfesional == 1 ? " carreradeInsectosProfesional," : ''
+      categorias += participante.creatividadeInnovacionTecnologicaProyectos == 1 ? " creatividadeInnovacionTecnologicaProyectos," : ''
+      categorias += participante.guerradeRobotsProfesional1Lb == 1 ? " guerradeRobotsProfesional1Lb," : ''
+      categorias += participante.autoaControlRCBluetooth == 1 ? " autoaControlRCBluetooth," : ''
+      categorias += participante.robotSoccer == 1 ? " robotSoccer," : ''
+      let doc = new jsPDF('landscape', null, 'letter');
       let logo = new Image();
       logo.src = 'certificado.jpg';
       doc.addImage(logo, 'JPEG', 0, 0, 280, 210);
       doc.setFont('times')
-      doc.setFontSize(13,'normal')
-      doc.text( 'Se otorga el presente certificado A:',30, 70)
-      doc.setFontSize(20,'bold')
-      doc.text( nombre==null?'':nombre,140, 80,'center')
-      doc.setFontSize(13,'normal')
-      doc.text( 'Por la participación en Olimpiada Boliviana de Ciencia y Tecnología BALLIVIANITOBOT en calidad de:',30, 90)
-      doc.setFontSize(20,'bold')
-      doc.text( participante.categoria==null?'':participante.categoria,140, 100,'center')
-      doc.setFontSize(13,'normal')
+      doc.setFontSize(13, 'normal')
+      doc.text('Se otorga el presente certificado A:', 30, 70)
+      doc.setFontSize(20, 'bold')
+      doc.text(nombre == null ? '' : nombre, 140, 80, 'center')
+      doc.setFontSize(13, 'normal')
+      doc.text('Por la participación en Olimpiada Boliviana de Ciencia y Tecnología BALLIVIANITOBOT en calidad de:', 30, 90)
+      doc.setFontSize(20, 'bold')
+      doc.text(participante.categoria == null ? '' : participante.categoria, 140, 100, 'center')
+      doc.setFontSize(13, 'normal')
+      doc.text("Con las participaciones en la(s) categoría(s):" + categorias, 30, 110, {
+        maxWidth: 220,
+        align: "justify"
+      }); // to justify
 
-      let nom=nombre==null?'':nombre
-      // doc.save('Certificado '+nom+'.pdf')
-      var qrcode = new QRCode(document.getElementById("qr_code"), {
-        text: "Nombre:"+nombre+"\nCategoria: "+participante.categoria,
-        width: 128,
-        height: 128,
-        colorDark : "#000000",
-        colorLight : "#ffffff",
-        correctLevel : QRCode.CorrectLevel.H
-      });
+      let nom = nombre == null ? '' : nombre
+      let opts = {
+        errorCorrectionLevel: 'M',
+        type: 'png',
+        quality: 0.95,
+        width: 100,
+        margin: 1,
+        color: {
+          dark: '#000000',
+          light: '#FFF',
+        }
+      }
+      let qrImage = await QRCode.toDataURL("Nombre:" + nom + "\nCategoria: " + participante.categoria, opts)
       setTimeout(() => {
-        let base64Image = $('#qr_code img').attr('src');
-        doc.addImage(base64Image, 'png', 235, 135, 25, 25);
+        // let base64Image = $('#qr_code img').attr('src');
+        doc.addImage(qrImage, 'png', 235, 135, 25, 25);
         // console.log(producer)
+        // doc.save('Certificado '+nom+'.pdf')
         window.open(doc.output('bloburl'), '_blank')
       }, 10);
     },
@@ -516,53 +539,60 @@ export default {
         this.participanteUpdateDialog = false
       })
     },
-    printCertificado(nombre,participante){
-      let categorias=''
-      categorias+=participante.controlRCPrimaria==1?" controlRCPrimaria,":''
-      categorias+=participante.seguidordelineaAmateur==1?" seguidordelineaAmateur,":''
-      categorias+=participante.minisumoRcAmateur==1?" minisumoRcAmateur,":''
-      categorias+=participante.minisumoAutonomoAmateur==1?" minisumoAutonomoAmateur,":''
-      categorias+=participante.carreradeInsectosAmateur==1?" carreradeInsectosAmateur,":''
-      categorias+=participante.peleadeRobotsAmateur==1?" peleadeRobotsAmateur,":''
-      categorias+=participante.minisumoAutonomoProfesional==1?" minisumoAutonomoProfesional,":''
-      categorias+=participante.minisumoRcProfesional==1?" minisumoRcProfesional,":''
-      categorias+=participante.microsumoProfesional==1?" microsumoProfesional,":''
-      categorias+=participante.seguidordelineaProfesional==1?" seguidordelineaProfesional,":''
-      categorias+=participante.carreradeInsectosProfesional==1?" carreradeInsectosProfesional,":''
-      categorias+=participante.creatividadeInnovacionTecnologicaProyectos==1?" creatividadeInnovacionTecnologicaProyectos,":''
-      categorias+=participante.guerradeRobotsProfesional1Lb==1?" guerradeRobotsProfesional1Lb,":''
-      categorias+=participante.autoaControlRCBluetooth==1?" autoaControlRCBluetooth,":''
-      categorias+=participante.robotSoccer==1?" robotSoccer,":''
-      let doc = new jsPDF('landscape',null,'letter');
+    async printCertificado(nombre, participante) {
+      let categorias = ''
+      categorias += participante.controlRCPrimaria == 1 ? " controlRCPrimaria," : ''
+      categorias += participante.seguidordelineaAmateur == 1 ? " seguidordelineaAmateur," : ''
+      categorias += participante.minisumoRcAmateur == 1 ? " minisumoRcAmateur," : ''
+      categorias += participante.minisumoAutonomoAmateur == 1 ? " minisumoAutonomoAmateur," : ''
+      categorias += participante.carreradeInsectosAmateur == 1 ? " carreradeInsectosAmateur," : ''
+      categorias += participante.peleadeRobotsAmateur == 1 ? " peleadeRobotsAmateur," : ''
+      categorias += participante.minisumoAutonomoProfesional == 1 ? " minisumoAutonomoProfesional," : ''
+      categorias += participante.minisumoRcProfesional == 1 ? " minisumoRcProfesional," : ''
+      categorias += participante.microsumoProfesional == 1 ? " microsumoProfesional," : ''
+      categorias += participante.seguidordelineaProfesional == 1 ? " seguidordelineaProfesional," : ''
+      categorias += participante.carreradeInsectosProfesional == 1 ? " carreradeInsectosProfesional," : ''
+      categorias += participante.creatividadeInnovacionTecnologicaProyectos == 1 ? " creatividadeInnovacionTecnologicaProyectos," : ''
+      categorias += participante.guerradeRobotsProfesional1Lb == 1 ? " guerradeRobotsProfesional1Lb," : ''
+      categorias += participante.autoaControlRCBluetooth == 1 ? " autoaControlRCBluetooth," : ''
+      categorias += participante.robotSoccer == 1 ? " robotSoccer," : ''
+      let doc = new jsPDF('landscape', null, 'letter');
       let logo = new Image();
       logo.src = 'certificado.jpg';
       doc.addImage(logo, 'JPEG', 0, 0, 280, 210);
       doc.setFont('times')
-      doc.setFontSize(13,'normal')
-      doc.text( 'Se otorga el presente certificado A:',30, 70)
-      doc.setFontSize(20,'bold')
-      doc.text( nombre==null?'':nombre,140, 80,'center')
-      doc.setFontSize(13,'normal')
-      doc.text( 'Por la participación en Olimpiada Boliviana de Ciencia y Tecnología BALLIVIANITOBOT en calidad de:',30, 90)
-      doc.setFontSize(20,'bold')
-      doc.text( participante.categoria==null?'':participante.categoria,140, 100,'center')
-      doc.setFontSize(13,'normal')
-      doc.text("Con las participaciones en la(s) categoría(s):"+categorias, 30, 110, {maxWidth: 220, align: "justify"}); // to justify
+      doc.setFontSize(13, 'normal')
+      doc.text('Se otorga el presente certificado A:', 30, 70)
+      doc.setFontSize(20, 'bold')
+      doc.text(nombre == null ? '' : nombre, 140, 80, 'center')
+      doc.setFontSize(13, 'normal')
+      doc.text('Por la participación en Olimpiada Boliviana de Ciencia y Tecnología BALLIVIANITOBOT en calidad de:', 30, 90)
+      doc.setFontSize(20, 'bold')
+      doc.text(participante.categoria == null ? '' : participante.categoria, 140, 100, 'center')
+      doc.setFontSize(13, 'normal')
+      doc.text("Con las participaciones en la(s) categoría(s):" + categorias, 30, 110, {
+        maxWidth: 220,
+        align: "justify"
+      }); // to justify
 
       let nom=nombre==null?'':nombre
-      // doc.save('Certificado '+nom+'.pdf')
-      var qrcode = new QRCode(document.getElementById("qr_code"), {
-        text: "Nombre:"+nombre+"\nCategoria: "+participante.categoria,
-        width: 128,
-        height: 128,
-        colorDark : "#000000",
-        colorLight : "#ffffff",
-        correctLevel : QRCode.CorrectLevel.H
-      });
+      let opts = {
+        errorCorrectionLevel: 'M',
+          type: 'png',
+          quality: 0.95,
+          width: 100,
+          margin: 1,
+          color: {
+          dark: '#000000',
+            light: '#FFF',
+        }
+      }
+      let qrImage = await QRCode.toDataURL("Nombre:"+nom+"\nCategoria: "+participante.categoria, opts)
       setTimeout(() => {
-        let base64Image = $('#qr_code img').attr('src');
-        doc.addImage(base64Image, 'png', 235, 135, 25, 25);
+        // let base64Image = $('#qr_code img').attr('src');
+        doc.addImage(qrImage, 'png', 235, 135, 25, 25);
         // console.log(producer)
+        // doc.save('Certificado '+nom+'.pdf')
         window.open(doc.output('bloburl'), '_blank')
       }, 10);
     },
