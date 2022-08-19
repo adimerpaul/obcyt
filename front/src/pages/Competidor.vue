@@ -65,6 +65,12 @@
           </ul>
         </q-td>
       </template>
+      <template v-slot:body-cell-foto="props">
+        <q-td :props="props" auto-width>
+          <q-img :src="url+'../imagenes'+ props.row.foto1" width="100px"/>
+          <q-img :src="url+'../imagenes'+ props.row.foto2" width="100px"/>
+        </q-td>
+      </template>
       <template v-slot:body-cell-Categorias="props">
         <q-td :props="props" auto-width>
           <ul style="list-style: none">
@@ -302,6 +308,7 @@ export default {
   name: `Competidor`,
   data () {
     return {
+      url:process.env.API,
       dato:{},
       store:useCounterStore(),
       loading:false,
@@ -329,6 +336,7 @@ export default {
         {label: 'club', field: 'club',name:'club',sortable:true},
         {label: 'Categorias', field: 'Categorias',name:'Categorias',align:'left',sortable:true},
         {label: 'id', field: 'id',name:'id',sortable:true},
+        {label: 'foto', field: 'foto',name:'foto',sortable:true},
       ],
       participante:{
         fechaNac1:date.formatDate(new Date(), 'YYYY-MM-DD'),
