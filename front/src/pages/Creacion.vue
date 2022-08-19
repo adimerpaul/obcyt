@@ -74,8 +74,35 @@ export default {
     this.participantesGet()
   },
   methods:{
+    async credencialUser1(nombre,codigo,foto) {
+      this.loading=true
+      this.$api.get('base64/'+foto).then(res=>{
+        this.loading=false
+        let foto=res.data
+        let doc = new jsPDF('landscape', null, 'letter');
+        let logo = new Image();
+        logo.src = 'frontal.png';
+        doc.addImage(logo, 'PNG', 7+69.7*0.95*3, 10+97.1*0.95*0, 69.7*0.95, 97.1*0.95);
+        doc.addImage(foto, 'PNG', 29+23*3+69.7*0.95*3-23*3, 32+23*0, 23, 23);
+        logo.src = 'trasera.png';
+        doc.addImage(logo, 'PNG', 7+69.7*0.95*3, 10+97.1*0.95*1, 69.7*0.95, 97.1*0.95);
 
-    async credencialUser1() {
+        doc.setFont('courier','bold')
+        doc.setFontSize(11)
+
+        doc.text(nombre == null ? '' : nombre, 41+69.7*0.95*3, 70, {maxWidth: 50, align: "center"});
+        doc.text(codigo == null ? '' : codigo, 41+69.7*0.95*3, 83, 'center')
+
+        doc.setFontSize(10)
+
+        doc.text(codigo == null ? '' : codigo, 41+69.7*0.95*3, 150, 'center')
+        doc.text(nombre == null ? '' : nombre, 41+69.7*0.95*3, 160, {maxWidth: 50, align: "center"});
+
+        doc.save('Credencial '+nombre+date.formatDate(new Date(),'HHmmss')+'.pdf')
+      })
+    },
+
+    async credencialUser000() {
         let doc = new jsPDF('landscape', null, 'letter');
         let logo = new Image();
         let logo2 = new Image();
@@ -161,7 +188,10 @@ export default {
       this.$api.get(`participante`).then(res => {
         this.loading=false
         this.participantes = res.data
-            this.credencialUser1()
+        this.participantes.forEach(r=>{
+            this.credencialUser1(r.nombre1,r.fechaNac1,r.foto1)
+            this.credencialUser1(r.nombre2,r.fechaNac2,r.foto2)
+        })
       })
     },
 
