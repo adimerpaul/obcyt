@@ -68,7 +68,7 @@
       <template v-slot:body-cell-foto="props">
         <q-td :props="props" auto-width>
           <a :href="url+'../imagenes/'+ props.row.foto1"><q-img :src="url+'../imagenes/'+ props.row.foto1" width="100px" height="100px"/></a>
-          <a :href="url+'../imagenes/'+ props.row.foto1"><q-img :src="url+'../imagenes/'+ props.row.foto1" width="100px" height="100px"/></a>
+          <a :href="url+'../imagenes/'+ props.row.foto2"><q-img :src="url+'../imagenes/'+ props.row.foto2" width="100px" height="100px"/></a>
         </q-td>
       </template>
       <template v-slot:body-cell-Categorias="props">
