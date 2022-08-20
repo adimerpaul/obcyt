@@ -29,6 +29,8 @@ Route::group(['middleware'=>'auth:sanctum'],function (){
     Route::post('consultaUsers',[\App\Http\Controllers\ConsultaController::class,'consultaUsers']);
     Route::resource('user',\App\Http\Controllers\UserController::class);
     Route::resource('participante',\App\Http\Controllers\ParticipanteController::class);
+    Route::get('credenciales',[\App\Http\Controllers\ParticipanteController::class,'credenciales']);
+
     Route::post('/upload', [\App\Http\Controllers\UploadController::class,'upload']);
     Route::resource('puntos',\App\Http\Controllers\PuntosController::class);
     Route::resource('base64',\App\Http\Controllers\Base64Controller::class);

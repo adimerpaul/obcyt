@@ -18,6 +18,26 @@ class ParticipanteController extends Controller
     {
         return Participante::orderBy('id','desc')->get();
     }
+    public function credenciales()
+    {
+        $participantes = Participante::orderBy('id','desc')->get();
+        foreach ($participantes as $participante) {
+            $path = 'imagenes/'.$participante->foto1;
+            $type = pathinfo($path, PATHINFO_EXTENSION);
+            $data = file_get_contents($path);
+            $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
+            $participantesMostrar[]=["nombre"=>$participante->nombre1,"fechaNac"=>$participante->fechaNac1,"club"=>$participante->club,"foto"=>$base64];
+            if ($participante->nombre2!=null){
+                $path = 'imagenes/'.$participante->foto2;
+                $type = pathinfo($path, PATHINFO_EXTENSION);
+                $data = file_get_contents($path);
+                $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
+                $participantesMostrar[]=["nombre"=>$participante->nombre2,"fechaNac"=>$participante->fechaNac2,"club"=>$participante->club,"foto"=>$base64];
+            }
+
+        }
+        return $participantesMostrar;
+    }
 
     /**
      * Show the form for creating a new resource.

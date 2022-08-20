@@ -3,19 +3,19 @@
 <div class="row">
   <div class="col-12 text-h6 text-center">
          GENERAR IMPRESION DE CERTIFICADOS Y CREDENCIALES MASIVOS
-        
+
   </div>
-  <div class="col-4">
-  <q-btn class="full-width" color="green" label="CERTIFICADOS PARTICIPANTES" @click="participanteClick"/>
-    
-  </div>  
-  <div class="col-4">
-  <q-btn class="full-width" color="accent" label="CERTIFICADOS CLUB"  @click="clubClick"/>
-    
-  </div>  
-  <div class="col-4">
-  <q-btn class="full-width" color="yellow" label="CREDENCIALES" @click="credencialClick"/>
-    
+  <div class="col-4 q-pa-xs">
+  <q-btn class="full-width" :loading="loading" icon="picture_as_pdf" color="green" label="CERTIFICADOS PARTICIPANTES" @click="participanteClick"/>
+
+  </div>
+  <div class="col-4 q-pa-xs">
+  <q-btn class="full-width" :loading="loading" icon="picture_as_pdf" color="accent" label="CERTIFICADOS CLUB"  @click="clubClick"/>
+
+  </div>
+  <div class="col-4 q-pa-xs">
+  <q-btn class="full-width" :loading="loading" icon="picture_as_pdf" color="yellow-9" label="CREDENCIALES" @click="credencialClick"/>
+
   </div>
 </div>
 
@@ -185,14 +185,90 @@ export default {
 
     credencialClick(){
       this.loading=true
-      this.$api.get(`participante`).then(res => {
+      this.$api.get(`credenciales`).then(res => {
         this.loading=false
         this.participantes = res.data
-        this.participantes.forEach(r=>{
-            this.credencialUser1(r.nombre1,r.fechaNac1,r.foto1)
-            this.credencialUser1(r.nombre2,r.fechaNac2,r.foto2)
+        console.log(this.participantes)
+        let doc = new jsPDF('landscape', null, 'letter');
+        let logo = new Image();
+        logo.src = 'frontal.png';
+        let trasera = new Image();
+        trasera.src = 'trasera.png';
+        let i=1
+        this.participantes.forEach(p=>{
+          let foto=p.foto
+          let nombre=p.nombre
+          let codigo=p.club
+          if (i==1){
+            doc.addImage(logo, 'PNG', 7+69.7*0.95*0, 10+97.1*0.95*0, 69.7*0.95, 97.1*0.95);
+            doc.addImage(trasera, 'PNG', 7+69.7*0.95*0, 10+97.1*0.95*1, 69.7*0.95, 97.1*0.95);
+            doc.addImage(foto, 'PNG', 29+23*0+69.7*0.95*0-23*0, 32+23*0, 23, 23);
+            doc.setFont('courier','bold')
+            doc.setFontSize(11)
+            doc.text(nombre == null ? '' : nombre, 41+69.7*0.95*0, 70, {maxWidth: 50, align: "center"});
+            doc.text(codigo == null ? '' : codigo, 41+69.7*0.95*0, 83, 'center')
+            doc.setFontSize(10)
+            doc.text(codigo == null ? '' : codigo, 41+69.7*0.95*0, 150, 'center')
+            doc.text(nombre == null ? '' : nombre, 41+69.7*0.95*0, 160, {maxWidth: 50, align: "center"});
+            i++;
+          }
+          else if (i==2){
+            doc.addImage(logo, 'PNG', 7+69.7*0.95*1, 10+97.1*0.95*0, 69.7*0.95, 97.1*0.95);
+            doc.addImage(trasera, 'PNG', 7+69.7*0.95*1, 10+97.1*0.95*1, 69.7*0.95, 97.1*0.95);
+            doc.addImage(foto, 'PNG', 29+23*1+69.7*0.95*1-23*1, 32+23*0, 23, 23);
+            doc.setFont('courier','bold')
+            doc.setFontSize(11)
+            doc.text(nombre == null ? '' : nombre, 41+69.7*0.95*1, 70, {maxWidth: 50, align: "center"});
+            doc.text(codigo == null ? '' : codigo, 41+69.7*0.95*1, 83, 'center')
+            doc.setFontSize(10)
+            doc.text(codigo == null ? '' : codigo, 41+69.7*0.95*1, 150, 'center')
+            doc.text(nombre == null ? '' : nombre, 41+69.7*0.95*1, 160, {maxWidth: 50, align: "center"});
+            i++;
+          }
+          else if (i==3){
+            doc.addImage(logo, 'PNG', 7+69.7*0.95*2, 10+97.1*0.95*0, 69.7*0.95, 97.1*0.95);
+            doc.addImage(trasera, 'PNG', 7+69.7*0.95*2, 10+97.1*0.95*1, 69.7*0.95, 97.1*0.95);
+            doc.addImage(foto, 'PNG', 29+23*2+69.7*0.95*2-23*2, 32+23*0, 23, 23);
+            doc.setFont('courier','bold')
+            doc.setFontSize(11)
+            doc.text(nombre == null ? '' : nombre, 41+69.7*0.95*2, 70, {maxWidth: 50, align: "center"});
+            doc.text(codigo == null ? '' : codigo, 41+69.7*0.95*2, 83, 'center')
+            doc.setFontSize(10)
+            doc.text(codigo == null ? '' : codigo, 41+69.7*0.95*2, 150, 'center')
+            doc.text(nombre == null ? '' : nombre, 41+69.7*0.95*2, 160, {maxWidth: 50, align: "center"});
+            i++
+          }else if (i==4){
+            doc.addImage(logo, 'PNG', 7+69.7*0.95*3, 10+97.1*0.95*0, 69.7*0.95, 97.1*0.95);
+            doc.addImage(trasera, 'PNG', 7+69.7*0.95*3, 10+97.1*0.95*1, 69.7*0.95, 97.1*0.95);
+            doc.addImage(foto, 'PNG', 29+23*3+69.7*0.95*3-23*3, 32+23*0, 23, 23);
+            doc.setFont('courier','bold')
+            doc.setFontSize(11)
+            doc.text(nombre == null ? '' : nombre, 41+69.7*0.95*3, 70, {maxWidth: 50, align: "center"});
+            doc.text(codigo == null ? '' : codigo, 41+69.7*0.95*3, 83, 'center')
+            doc.setFontSize(10)
+            doc.text(codigo == null ? '' : codigo, 41+69.7*0.95*3, 150, 'center')
+            doc.text(nombre == null ? '' : nombre, 41+69.7*0.95*3, 160, {maxWidth: 50, align: "center"});
+            i=1
+            doc.addPage();
+          }
         })
+        doc.save('Credencial '+date.formatDate(new Date(),'HHmmss')+'.pdf')
+
+            // this.credencialUser()
+        // this.participantes.forEach(r=>{
+        //     this.credencialUser1(r.nombre1,r.fechaNac1,r.foto1)
+        //     this.credencialUser1(r.nombre2,r.fechaNac2,r.foto2)
+        // })
       })
+      // this.loading=true
+      // this.$api.get(`participante`).then(res => {
+      //   this.loading=false
+      //   this.participantes = res.data
+      //   this.participantes.forEach(r=>{
+      //       this.credencialUser1(r.nombre1,r.fechaNac1,r.foto1)
+      //       this.credencialUser1(r.nombre2,r.fechaNac2,r.foto2)
+      //   })
+      // })
     },
 
     async printCertificado() {
@@ -290,7 +366,7 @@ export default {
 
         // let base64Image = $('#qr_code img').attr('src');
         doc.addImage(qrImage, 'png', 235, 135, 25, 25);
-        // window.open(doc.output('bloburl'), '_blank')        
+        // window.open(doc.output('bloburl'), '_blank')
       }
        doc.addPage();
       }
@@ -359,7 +435,7 @@ export default {
         // window.open(doc.output('bloburl'), '_blank')
       }
 
-   
+
        doc.addPage();
       }
         doc.save('Certificado.pdf')
