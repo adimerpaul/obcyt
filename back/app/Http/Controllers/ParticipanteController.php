@@ -18,6 +18,10 @@ class ParticipanteController extends Controller
     {
         return Participante::orderBy('id','desc')->get();
     }
+    public function listparticipante()
+    {
+        return Participante::orderBy('id','desc')->get();
+    }
     public function credenciales()
     {
         $participantes = Participante::orderBy('id','desc')->get();

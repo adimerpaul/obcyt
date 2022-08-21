@@ -1,7 +1,7 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 61204:
+/***/ 32840:
 /***/ ((__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -3954,59 +3954,65 @@ const Competidor_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(Competi
 
 runtime_auto_import_default()(Competidorvue_type_script_lang_js, 'components', {QPage: QPage/* default */.Z,QTable: QTable/* default */.Z,QBtn: QBtn/* default */.Z,QInput: QInput/* default */.Z,QIcon: QIcon/* default */.Z,QTd: QTd/* default */.Z,QBtnDropdown: QBtnDropdown/* default */.Z,QList: QList/* default */.Z,QItem: QItem/* default */.Z,QItemSection: QItemSection/* default */.Z,QItemLabel: QItemLabel/* default */.Z,QImg: QImg/* default */.Z,QDialog: QDialog/* default */.Z,QCard: QCard/* default */.Z,QCardSection: QCardSection/* default */.Z,QSpace: QSpace/* default */.Z,QForm: QForm/* default */.Z,QUploader: QUploader/* default */.Z,QCheckbox: QCheckbox/* default */.Z,QSelect: QSelect/* default */.Z});runtime_auto_import_default()(Competidorvue_type_script_lang_js, 'directives', {ClosePopup: ClosePopup/* default */.Z});
 
-;// CONCATENATED MODULE: ./node_modules/@quasar/app-webpack/lib/webpack/loader.js.transform-quasar-imports.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-2.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/@quasar/app-webpack/lib/webpack/loader.vue.auto-import-quasar.js??ruleSet[0].use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[1]!./src/pages/Creacion.vue?vue&type=template&id=28a103de
+;// CONCATENATED MODULE: ./node_modules/@quasar/app-webpack/lib/webpack/loader.js.transform-quasar-imports.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-2.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/@quasar/app-webpack/lib/webpack/loader.vue.auto-import-quasar.js??ruleSet[0].use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[1]!./src/pages/Creacion.vue?vue&type=template&id=0e370494
 
-const Creacionvue_type_template_id_28a103de_hoisted_1 = {
+const Creacionvue_type_template_id_0e370494_hoisted_1 = {
   class: "row"
 };
 
-const Creacionvue_type_template_id_28a103de_hoisted_2 = /*#__PURE__*/(0,runtime_core_esm_bundler/* createElementVNode */._)("div", {
+const Creacionvue_type_template_id_0e370494_hoisted_2 = /*#__PURE__*/(0,runtime_core_esm_bundler/* createElementVNode */._)("div", {
   class: "col-12 text-h6 text-center"
 }, " GENERAR IMPRESION DE CERTIFICADOS Y CREDENCIALES MASIVOS ", -1);
 
-const Creacionvue_type_template_id_28a103de_hoisted_3 = {
-  class: "col-4"
+const Creacionvue_type_template_id_0e370494_hoisted_3 = {
+  class: "col-4 q-pa-xs"
 };
-const Creacionvue_type_template_id_28a103de_hoisted_4 = {
-  class: "col-4"
+const Creacionvue_type_template_id_0e370494_hoisted_4 = {
+  class: "col-4 q-pa-xs"
 };
-const Creacionvue_type_template_id_28a103de_hoisted_5 = {
-  class: "col-4"
+const Creacionvue_type_template_id_0e370494_hoisted_5 = {
+  class: "col-4 q-pa-xs"
 };
 
-const Creacionvue_type_template_id_28a103de_hoisted_6 = /*#__PURE__*/(0,runtime_core_esm_bundler/* createElementVNode */._)("div", {
+const Creacionvue_type_template_id_0e370494_hoisted_6 = /*#__PURE__*/(0,runtime_core_esm_bundler/* createElementVNode */._)("div", {
   id: "qr_code",
   style: {
     "display": "none"
   }
 }, null, -1);
 
-function Creacionvue_type_template_id_28a103de_render(_ctx, _cache, $props, $setup, $data, $options) {
+function Creacionvue_type_template_id_0e370494_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_q_btn = (0,runtime_core_esm_bundler/* resolveComponent */.up)("q-btn");
 
   const _component_q_page = (0,runtime_core_esm_bundler/* resolveComponent */.up)("q-page");
 
   return (0,runtime_core_esm_bundler/* openBlock */.wg)(), (0,runtime_core_esm_bundler/* createBlock */.j4)(_component_q_page, null, {
-    default: (0,runtime_core_esm_bundler/* withCtx */.w5)(() => [(0,runtime_core_esm_bundler/* createElementVNode */._)("div", Creacionvue_type_template_id_28a103de_hoisted_1, [Creacionvue_type_template_id_28a103de_hoisted_2, (0,runtime_core_esm_bundler/* createElementVNode */._)("div", Creacionvue_type_template_id_28a103de_hoisted_3, [(0,runtime_core_esm_bundler/* createVNode */.Wm)(_component_q_btn, {
+    default: (0,runtime_core_esm_bundler/* withCtx */.w5)(() => [(0,runtime_core_esm_bundler/* createElementVNode */._)("div", Creacionvue_type_template_id_0e370494_hoisted_1, [Creacionvue_type_template_id_0e370494_hoisted_2, (0,runtime_core_esm_bundler/* createElementVNode */._)("div", Creacionvue_type_template_id_0e370494_hoisted_3, [(0,runtime_core_esm_bundler/* createVNode */.Wm)(_component_q_btn, {
       class: "full-width",
+      loading: $data.loading,
+      icon: "picture_as_pdf",
       color: "green",
       label: "CERTIFICADOS PARTICIPANTES",
       onClick: $options.participanteClick
-    }, null, 8, ["onClick"])]), (0,runtime_core_esm_bundler/* createElementVNode */._)("div", Creacionvue_type_template_id_28a103de_hoisted_4, [(0,runtime_core_esm_bundler/* createVNode */.Wm)(_component_q_btn, {
+    }, null, 8, ["loading", "onClick"])]), (0,runtime_core_esm_bundler/* createElementVNode */._)("div", Creacionvue_type_template_id_0e370494_hoisted_4, [(0,runtime_core_esm_bundler/* createVNode */.Wm)(_component_q_btn, {
       class: "full-width",
+      loading: $data.loading,
+      icon: "picture_as_pdf",
       color: "accent",
       label: "CERTIFICADOS CLUB",
       onClick: $options.clubClick
-    }, null, 8, ["onClick"])]), (0,runtime_core_esm_bundler/* createElementVNode */._)("div", Creacionvue_type_template_id_28a103de_hoisted_5, [(0,runtime_core_esm_bundler/* createVNode */.Wm)(_component_q_btn, {
+    }, null, 8, ["loading", "onClick"])]), (0,runtime_core_esm_bundler/* createElementVNode */._)("div", Creacionvue_type_template_id_0e370494_hoisted_5, [(0,runtime_core_esm_bundler/* createVNode */.Wm)(_component_q_btn, {
       class: "full-width",
-      color: "yellow",
+      loading: $data.loading,
+      icon: "picture_as_pdf",
+      color: "yellow-9",
       label: "CREDENCIALES",
       onClick: $options.credencialClick
-    }, null, 8, ["onClick"])])]), Creacionvue_type_template_id_28a103de_hoisted_6]),
+    }, null, 8, ["loading", "onClick"])])]), Creacionvue_type_template_id_0e370494_hoisted_6]),
     _: 1
   });
 }
-;// CONCATENATED MODULE: ./src/pages/Creacion.vue?vue&type=template&id=28a103de
+;// CONCATENATED MODULE: ./src/pages/Creacion.vue?vue&type=template&id=0e370494
 
 ;// CONCATENATED MODULE: ./node_modules/@quasar/app-webpack/lib/webpack/loader.js.transform-quasar-imports.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-2.use[0]!./node_modules/@quasar/app-webpack/lib/webpack/loader.vue.auto-import-quasar.js??ruleSet[0].use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[1]!./src/pages/Creacion.vue?vue&type=script&lang=js
 
@@ -4174,14 +4180,110 @@ var Creacionvue_type_script_lang_js_QRCode = __webpack_require__(32316);
 
     credencialClick() {
       this.loading = true;
-      this.$api.get(`participante`).then(res => {
+      this.$api.get(`credenciales`).then(res => {
         this.loading = false;
         this.participantes = res.data;
-        this.participantes.forEach(r => {
-          this.credencialUser1(r.nombre1, r.fechaNac1, r.foto1);
-          this.credencialUser1(r.nombre2, r.fechaNac2, r.foto2);
+        console.log(this.participantes);
+        let doc = new jspdf_es_min/* jsPDF */.kH('landscape', null, 'letter');
+        let logo = new Image();
+        logo.src = 'frontal.png';
+        let trasera = new Image();
+        trasera.src = 'trasera.png';
+        let i = 1;
+        this.participantes.forEach(p => {
+          let foto = p.foto;
+          let nombre = p.nombre;
+          let codigo = p.club;
+
+          if (i == 1) {
+            doc.addImage(logo, 'PNG', 7 + 69.7 * 0.95 * 0, 10 + 97.1 * 0.95 * 0, 69.7 * 0.95, 97.1 * 0.95);
+            doc.addImage(trasera, 'PNG', 7 + 69.7 * 0.95 * 0, 10 + 97.1 * 0.95 * 1, 69.7 * 0.95, 97.1 * 0.95);
+            doc.addImage(foto, 'PNG', 29 + 23 * 0 + 69.7 * 0.95 * 0 - 23 * 0, 32 + 23 * 0, 23, 23);
+            doc.setFont('courier', 'bold');
+            doc.setFontSize(11);
+            doc.text(nombre == null ? '' : nombre, 41 + 69.7 * 0.95 * 0, 70, {
+              maxWidth: 50,
+              align: "center"
+            });
+            doc.text(codigo == null ? '' : codigo, 41 + 69.7 * 0.95 * 0, 83, 'center');
+            doc.setFontSize(10);
+            doc.text(codigo == null ? '' : codigo, 41 + 69.7 * 0.95 * 0, 150, 'center');
+            doc.text(nombre == null ? '' : nombre, 41 + 69.7 * 0.95 * 0, 160, {
+              maxWidth: 50,
+              align: "center"
+            });
+            i++;
+          } else if (i == 2) {
+            doc.addImage(logo, 'PNG', 7 + 69.7 * 0.95 * 1, 10 + 97.1 * 0.95 * 0, 69.7 * 0.95, 97.1 * 0.95);
+            doc.addImage(trasera, 'PNG', 7 + 69.7 * 0.95 * 1, 10 + 97.1 * 0.95 * 1, 69.7 * 0.95, 97.1 * 0.95);
+            doc.addImage(foto, 'PNG', 29 + 23 * 1 + 69.7 * 0.95 * 1 - 23 * 1, 32 + 23 * 0, 23, 23);
+            doc.setFont('courier', 'bold');
+            doc.setFontSize(11);
+            doc.text(nombre == null ? '' : nombre, 41 + 69.7 * 0.95 * 1, 70, {
+              maxWidth: 50,
+              align: "center"
+            });
+            doc.text(codigo == null ? '' : codigo, 41 + 69.7 * 0.95 * 1, 83, 'center');
+            doc.setFontSize(10);
+            doc.text(codigo == null ? '' : codigo, 41 + 69.7 * 0.95 * 1, 150, 'center');
+            doc.text(nombre == null ? '' : nombre, 41 + 69.7 * 0.95 * 1, 160, {
+              maxWidth: 50,
+              align: "center"
+            });
+            i++;
+          } else if (i == 3) {
+            doc.addImage(logo, 'PNG', 7 + 69.7 * 0.95 * 2, 10 + 97.1 * 0.95 * 0, 69.7 * 0.95, 97.1 * 0.95);
+            doc.addImage(trasera, 'PNG', 7 + 69.7 * 0.95 * 2, 10 + 97.1 * 0.95 * 1, 69.7 * 0.95, 97.1 * 0.95);
+            doc.addImage(foto, 'PNG', 29 + 23 * 2 + 69.7 * 0.95 * 2 - 23 * 2, 32 + 23 * 0, 23, 23);
+            doc.setFont('courier', 'bold');
+            doc.setFontSize(11);
+            doc.text(nombre == null ? '' : nombre, 41 + 69.7 * 0.95 * 2, 70, {
+              maxWidth: 50,
+              align: "center"
+            });
+            doc.text(codigo == null ? '' : codigo, 41 + 69.7 * 0.95 * 2, 83, 'center');
+            doc.setFontSize(10);
+            doc.text(codigo == null ? '' : codigo, 41 + 69.7 * 0.95 * 2, 150, 'center');
+            doc.text(nombre == null ? '' : nombre, 41 + 69.7 * 0.95 * 2, 160, {
+              maxWidth: 50,
+              align: "center"
+            });
+            i++;
+          } else if (i == 4) {
+            doc.addImage(logo, 'PNG', 7 + 69.7 * 0.95 * 3, 10 + 97.1 * 0.95 * 0, 69.7 * 0.95, 97.1 * 0.95);
+            doc.addImage(trasera, 'PNG', 7 + 69.7 * 0.95 * 3, 10 + 97.1 * 0.95 * 1, 69.7 * 0.95, 97.1 * 0.95);
+            doc.addImage(foto, 'PNG', 29 + 23 * 3 + 69.7 * 0.95 * 3 - 23 * 3, 32 + 23 * 0, 23, 23);
+            doc.setFont('courier', 'bold');
+            doc.setFontSize(11);
+            doc.text(nombre == null ? '' : nombre, 41 + 69.7 * 0.95 * 3, 70, {
+              maxWidth: 50,
+              align: "center"
+            });
+            doc.text(codigo == null ? '' : codigo, 41 + 69.7 * 0.95 * 3, 83, 'center');
+            doc.setFontSize(10);
+            doc.text(codigo == null ? '' : codigo, 41 + 69.7 * 0.95 * 3, 150, 'center');
+            doc.text(nombre == null ? '' : nombre, 41 + 69.7 * 0.95 * 3, 160, {
+              maxWidth: 50,
+              align: "center"
+            });
+            i = 1;
+            doc.addPage();
+          }
         });
-      });
+        doc.save('Credencial ' + date/* default.formatDate */.ZP.formatDate(new Date(), 'HHmmss') + '.pdf'); // this.credencialUser()
+        // this.participantes.forEach(r=>{
+        //     this.credencialUser1(r.nombre1,r.fechaNac1,r.foto1)
+        //     this.credencialUser1(r.nombre2,r.fechaNac2,r.foto2)
+        // })
+      }); // this.loading=true
+      // this.$api.get(`participante`).then(res => {
+      //   this.loading=false
+      //   this.participantes = res.data
+      //   this.participantes.forEach(r=>{
+      //       this.credencialUser1(r.nombre1,r.fechaNac1,r.foto1)
+      //       this.credencialUser1(r.nombre2,r.fechaNac2,r.foto2)
+      //   })
+      // })
     },
 
     async printCertificado() {
@@ -4273,7 +4375,7 @@ var Creacionvue_type_script_lang_js_QRCode = __webpack_require__(32316);
           };
           let qrImage = await Creacionvue_type_script_lang_js_QRCode.toDataURL("Nombre:" + nom + "\nCategoria: " + participante.categoria, opts); // let base64Image = $('#qr_code img').attr('src');
 
-          doc.addImage(qrImage, 'png', 235, 135, 25, 25); // window.open(doc.output('bloburl'), '_blank')        
+          doc.addImage(qrImage, 'png', 235, 135, 25, 25); // window.open(doc.output('bloburl'), '_blank')
         }
 
         doc.addPage();
@@ -4363,13 +4465,409 @@ var Creacionvue_type_script_lang_js_QRCode = __webpack_require__(32316);
 
 
 ;
-const Creacion_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(Creacionvue_type_script_lang_js, [['render',Creacionvue_type_template_id_28a103de_render]])
+const Creacion_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(Creacionvue_type_script_lang_js, [['render',Creacionvue_type_template_id_0e370494_render]])
 
 /* harmony default export */ const Creacion = (Creacion_exports_);
 ;
 
 
 runtime_auto_import_default()(Creacionvue_type_script_lang_js, 'components', {QPage: QPage/* default */.Z,QBtn: QBtn/* default */.Z});
+
+;// CONCATENATED MODULE: ./node_modules/@quasar/app-webpack/lib/webpack/loader.js.transform-quasar-imports.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-2.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/@quasar/app-webpack/lib/webpack/loader.vue.auto-import-quasar.js??ruleSet[0].use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[1]!./src/pages/Certificados.vue?vue&type=template&id=2fdc2713
+
+const Certificadosvue_type_template_id_2fdc2713_hoisted_1 = {
+  class: "row"
+};
+const Certificadosvue_type_template_id_2fdc2713_hoisted_2 = {
+  class: "col-12"
+};
+const Certificadosvue_type_template_id_2fdc2713_hoisted_3 = {
+  style: {
+    "list-style": "none"
+  }
+};
+const Certificadosvue_type_template_id_2fdc2713_hoisted_4 = {
+  key: 0
+};
+const Certificadosvue_type_template_id_2fdc2713_hoisted_5 = {
+  style: {
+    "list-style": "none"
+  }
+};
+const Certificadosvue_type_template_id_2fdc2713_hoisted_6 = {
+  key: 0
+};
+const Certificadosvue_type_template_id_2fdc2713_hoisted_7 = {
+  key: 1
+};
+const Certificadosvue_type_template_id_2fdc2713_hoisted_8 = {
+  key: 2
+};
+const Certificadosvue_type_template_id_2fdc2713_hoisted_9 = {
+  key: 3
+};
+const Certificadosvue_type_template_id_2fdc2713_hoisted_10 = {
+  key: 4
+};
+const Certificadosvue_type_template_id_2fdc2713_hoisted_11 = {
+  key: 5
+};
+const Certificadosvue_type_template_id_2fdc2713_hoisted_12 = {
+  key: 6
+};
+const Certificadosvue_type_template_id_2fdc2713_hoisted_13 = {
+  key: 7
+};
+const Certificadosvue_type_template_id_2fdc2713_hoisted_14 = {
+  key: 8
+};
+const Certificadosvue_type_template_id_2fdc2713_hoisted_15 = {
+  key: 9
+};
+const Certificadosvue_type_template_id_2fdc2713_hoisted_16 = {
+  key: 10
+};
+const Certificadosvue_type_template_id_2fdc2713_hoisted_17 = {
+  key: 11
+};
+const Certificadosvue_type_template_id_2fdc2713_hoisted_18 = {
+  key: 12
+};
+const Certificadosvue_type_template_id_2fdc2713_hoisted_19 = {
+  key: 13
+};
+const Certificadosvue_type_template_id_2fdc2713_hoisted_20 = {
+  key: 14
+};
+
+const Certificadosvue_type_template_id_2fdc2713_hoisted_21 = /*#__PURE__*/(0,runtime_core_esm_bundler/* createElementVNode */._)("div", {
+  id: "qr_code",
+  style: {
+    "display": "none"
+  }
+}, null, -1);
+
+function Certificadosvue_type_template_id_2fdc2713_render(_ctx, _cache, $props, $setup, $data, $options) {
+  const _component_q_btn = (0,runtime_core_esm_bundler/* resolveComponent */.up)("q-btn");
+
+  const _component_q_icon = (0,runtime_core_esm_bundler/* resolveComponent */.up)("q-icon");
+
+  const _component_q_input = (0,runtime_core_esm_bundler/* resolveComponent */.up)("q-input");
+
+  const _component_q_td = (0,runtime_core_esm_bundler/* resolveComponent */.up)("q-td");
+
+  const _component_q_table = (0,runtime_core_esm_bundler/* resolveComponent */.up)("q-table");
+
+  const _component_q_page = (0,runtime_core_esm_bundler/* resolveComponent */.up)("q-page");
+
+  return (0,runtime_core_esm_bundler/* openBlock */.wg)(), (0,runtime_core_esm_bundler/* createBlock */.j4)(_component_q_page, null, {
+    default: (0,runtime_core_esm_bundler/* withCtx */.w5)(() => [(0,runtime_core_esm_bundler/* createElementVNode */._)("div", Certificadosvue_type_template_id_2fdc2713_hoisted_1, [(0,runtime_core_esm_bundler/* createElementVNode */._)("div", Certificadosvue_type_template_id_2fdc2713_hoisted_2, [(0,runtime_core_esm_bundler/* createVNode */.Wm)(_component_q_table, {
+      dense: "",
+      rows: $data.participantes,
+      columns: $data.participanteColumns,
+      "rows-per-page-options": [0],
+      filter: $data.participanteFilter
+    }, {
+      "top-right": (0,runtime_core_esm_bundler/* withCtx */.w5)(() => [(0,runtime_core_esm_bundler/* createVNode */.Wm)(_component_q_btn, {
+        color: "green",
+        loading: $data.loading,
+        onClick: _ctx.participanteClick,
+        icon: "add_circle_outline",
+        label: _ctx.$q.screen.lt.md ? '' : 'Registrar'
+      }, null, 8, ["loading", "onClick", "label"]), (0,runtime_core_esm_bundler/* createVNode */.Wm)(_component_q_btn, {
+        color: "blue",
+        loading: $data.loading,
+        onClick: $options.participantesGet,
+        icon: "refresh",
+        label: _ctx.$q.screen.lt.md ? '' : 'Actualizar'
+      }, null, 8, ["loading", "onClick", "label"]), (0,runtime_core_esm_bundler/* createVNode */.Wm)(_component_q_input, {
+        dense: "",
+        outlined: "",
+        modelValue: $data.participanteFilter,
+        "onUpdate:modelValue": _cache[0] || (_cache[0] = $event => $data.participanteFilter = $event),
+        placeholder: "Buscar"
+      }, {
+        prepend: (0,runtime_core_esm_bundler/* withCtx */.w5)(() => [(0,runtime_core_esm_bundler/* createVNode */.Wm)(_component_q_icon, {
+          name: "search"
+        })]),
+        _: 1
+      }, 8, ["modelValue"])]),
+      "body-cell-Opciones": (0,runtime_core_esm_bundler/* withCtx */.w5)(props => [(0,runtime_core_esm_bundler/* createVNode */.Wm)(_component_q_td, {
+        props: props
+      }, {
+        default: (0,runtime_core_esm_bundler/* withCtx */.w5)(() => [(0,runtime_core_esm_bundler/* createVNode */.Wm)(_component_q_btn, {
+          color: "info",
+          dense: "",
+          label: "PDF",
+          icon: "download",
+          onClick: $event => $options.printCertificado(props.row)
+        }, null, 8, ["onClick"])]),
+        _: 2
+      }, 1032, ["props"])]),
+      "body-cell-Participantes": (0,runtime_core_esm_bundler/* withCtx */.w5)(props => [(0,runtime_core_esm_bundler/* createVNode */.Wm)(_component_q_td, {
+        props: props,
+        "auto-width": ""
+      }, {
+        default: (0,runtime_core_esm_bundler/* withCtx */.w5)(() => [(0,runtime_core_esm_bundler/* createElementVNode */._)("ul", Certificadosvue_type_template_id_2fdc2713_hoisted_3, [(0,runtime_core_esm_bundler/* createElementVNode */._)("li", null, "1.- " + (0,shared_esm_bundler/* toDisplayString */.zw)(props.row.nombre1), 1), props.row.nombre2 != null ? ((0,runtime_core_esm_bundler/* openBlock */.wg)(), (0,runtime_core_esm_bundler/* createElementBlock */.iD)("li", Certificadosvue_type_template_id_2fdc2713_hoisted_4, "2.- " + (0,shared_esm_bundler/* toDisplayString */.zw)(props.row.nombre2), 1)) : (0,runtime_core_esm_bundler/* createCommentVNode */.kq)("", true)])]),
+        _: 2
+      }, 1032, ["props"])]),
+      "body-cell-Categorias": (0,runtime_core_esm_bundler/* withCtx */.w5)(props => [(0,runtime_core_esm_bundler/* createVNode */.Wm)(_component_q_td, {
+        props: props,
+        "auto-width": ""
+      }, {
+        default: (0,runtime_core_esm_bundler/* withCtx */.w5)(() => [(0,runtime_core_esm_bundler/* createElementVNode */._)("ul", Certificadosvue_type_template_id_2fdc2713_hoisted_5, [props.row.controlRCPrimaria ? ((0,runtime_core_esm_bundler/* openBlock */.wg)(), (0,runtime_core_esm_bundler/* createElementBlock */.iD)("li", Certificadosvue_type_template_id_2fdc2713_hoisted_6, "controlRCPrimaria")) : (0,runtime_core_esm_bundler/* createCommentVNode */.kq)("", true), props.row.seguidordelineaAmateur ? ((0,runtime_core_esm_bundler/* openBlock */.wg)(), (0,runtime_core_esm_bundler/* createElementBlock */.iD)("li", Certificadosvue_type_template_id_2fdc2713_hoisted_7, "seguidordelineaAmateur")) : (0,runtime_core_esm_bundler/* createCommentVNode */.kq)("", true), props.row.minisumoRcAmateur ? ((0,runtime_core_esm_bundler/* openBlock */.wg)(), (0,runtime_core_esm_bundler/* createElementBlock */.iD)("li", Certificadosvue_type_template_id_2fdc2713_hoisted_8, "minisumoRcAmateur")) : (0,runtime_core_esm_bundler/* createCommentVNode */.kq)("", true), props.row.minisumoAutonomoAmateur ? ((0,runtime_core_esm_bundler/* openBlock */.wg)(), (0,runtime_core_esm_bundler/* createElementBlock */.iD)("li", Certificadosvue_type_template_id_2fdc2713_hoisted_9, "minisumoAutonomoAmateur")) : (0,runtime_core_esm_bundler/* createCommentVNode */.kq)("", true), props.row.carreradeInsectosAmateur ? ((0,runtime_core_esm_bundler/* openBlock */.wg)(), (0,runtime_core_esm_bundler/* createElementBlock */.iD)("li", Certificadosvue_type_template_id_2fdc2713_hoisted_10, "carreradeInsectosAmateur")) : (0,runtime_core_esm_bundler/* createCommentVNode */.kq)("", true), props.row.peleadeRobotsAmateur ? ((0,runtime_core_esm_bundler/* openBlock */.wg)(), (0,runtime_core_esm_bundler/* createElementBlock */.iD)("li", Certificadosvue_type_template_id_2fdc2713_hoisted_11, "peleadeRobotsAmateur")) : (0,runtime_core_esm_bundler/* createCommentVNode */.kq)("", true), props.row.minisumoAutonomoProfesional ? ((0,runtime_core_esm_bundler/* openBlock */.wg)(), (0,runtime_core_esm_bundler/* createElementBlock */.iD)("li", Certificadosvue_type_template_id_2fdc2713_hoisted_12, "minisumoAutonomoProfesional")) : (0,runtime_core_esm_bundler/* createCommentVNode */.kq)("", true), props.row.minisumoRcProfesional ? ((0,runtime_core_esm_bundler/* openBlock */.wg)(), (0,runtime_core_esm_bundler/* createElementBlock */.iD)("li", Certificadosvue_type_template_id_2fdc2713_hoisted_13, "minisumoRcProfesional")) : (0,runtime_core_esm_bundler/* createCommentVNode */.kq)("", true), props.row.microsumoProfesional ? ((0,runtime_core_esm_bundler/* openBlock */.wg)(), (0,runtime_core_esm_bundler/* createElementBlock */.iD)("li", Certificadosvue_type_template_id_2fdc2713_hoisted_14, "microsumoProfesional")) : (0,runtime_core_esm_bundler/* createCommentVNode */.kq)("", true), props.row.seguidordelineaProfesional ? ((0,runtime_core_esm_bundler/* openBlock */.wg)(), (0,runtime_core_esm_bundler/* createElementBlock */.iD)("li", Certificadosvue_type_template_id_2fdc2713_hoisted_15, "seguidordelineaProfesional")) : (0,runtime_core_esm_bundler/* createCommentVNode */.kq)("", true), props.row.carreradeInsectosProfesional ? ((0,runtime_core_esm_bundler/* openBlock */.wg)(), (0,runtime_core_esm_bundler/* createElementBlock */.iD)("li", Certificadosvue_type_template_id_2fdc2713_hoisted_16, "carreradeInsectosProfesional")) : (0,runtime_core_esm_bundler/* createCommentVNode */.kq)("", true), props.row.creatividadeInnovacionTecnologicaProyectos ? ((0,runtime_core_esm_bundler/* openBlock */.wg)(), (0,runtime_core_esm_bundler/* createElementBlock */.iD)("li", Certificadosvue_type_template_id_2fdc2713_hoisted_17, "creatividadeInnovacionTecnologicaProyectos")) : (0,runtime_core_esm_bundler/* createCommentVNode */.kq)("", true), props.row.guerradeRobotsProfesional1Lb ? ((0,runtime_core_esm_bundler/* openBlock */.wg)(), (0,runtime_core_esm_bundler/* createElementBlock */.iD)("li", Certificadosvue_type_template_id_2fdc2713_hoisted_18, "guerradeRobotsProfesional1Lb")) : (0,runtime_core_esm_bundler/* createCommentVNode */.kq)("", true), props.row.autoaControlRCBluetooth ? ((0,runtime_core_esm_bundler/* openBlock */.wg)(), (0,runtime_core_esm_bundler/* createElementBlock */.iD)("li", Certificadosvue_type_template_id_2fdc2713_hoisted_19, "autoaControlRCBluetooth")) : (0,runtime_core_esm_bundler/* createCommentVNode */.kq)("", true), props.row.robotSoccer ? ((0,runtime_core_esm_bundler/* openBlock */.wg)(), (0,runtime_core_esm_bundler/* createElementBlock */.iD)("li", Certificadosvue_type_template_id_2fdc2713_hoisted_20, "robotSoccer")) : (0,runtime_core_esm_bundler/* createCommentVNode */.kq)("", true)])]),
+        _: 2
+      }, 1032, ["props"])]),
+      _: 1
+    }, 8, ["rows", "columns", "filter"])])]), Certificadosvue_type_template_id_2fdc2713_hoisted_21]),
+    _: 1
+  });
+}
+;// CONCATENATED MODULE: ./src/pages/Certificados.vue?vue&type=template&id=2fdc2713
+
+;// CONCATENATED MODULE: ./node_modules/@quasar/app-webpack/lib/webpack/loader.js.transform-quasar-imports.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-2.use[0]!./node_modules/@quasar/app-webpack/lib/webpack/loader.vue.auto-import-quasar.js??ruleSet[0].use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[1]!./src/pages/Certificados.vue?vue&type=script&lang=js
+
+
+
+
+
+
+var Certificadosvue_type_script_lang_js_QRCode = __webpack_require__(32316);
+
+/* harmony default export */ const Certificadosvue_type_script_lang_js = ({
+  name: `Competidor`,
+
+  data() {
+    return {
+      url: "https://www.bobcyt.miganancia.cf/api/",
+      dato: {},
+      store: (0,example_store/* useCounterStore */.A)(),
+      loading: false,
+      participanteDatosDialog: false,
+      participanteFilter: '',
+      puntos: [],
+      participanteDialog: false,
+      participanteUpdateDialog: false,
+      participantes: [],
+      datoOpcion: [],
+      participanteColumns: [{
+        label: 'Opciones',
+        field: 'Opciones',
+        name: 'Opciones',
+        sortable: true
+      }, {
+        label: 'Participantes',
+        field: 'Participantes',
+        name: 'Participantes',
+        sortable: true,
+        align: 'left'
+      }, {
+        label: 'nombre1',
+        field: 'nombre1',
+        name: 'nombre1',
+        sortable: true,
+        classes: 'hidden',
+        headerClasses: 'hidden'
+      }, {
+        label: 'nombre2',
+        field: 'nombre2',
+        name: 'nombre2',
+        sortable: true,
+        classes: 'hidden',
+        headerClasses: 'hidden'
+      }, {
+        label: 'club',
+        field: 'club',
+        name: 'club',
+        sortable: true
+      }, {
+        label: 'Categorias',
+        field: 'Categorias',
+        name: 'Categorias',
+        align: 'left',
+        sortable: true
+      }],
+      participante: {
+        fechaNac1: date/* default.formatDate */.ZP.formatDate(new Date(), 'YYYY-MM-DD'),
+        fechaNac2: date/* default.formatDate */.ZP.formatDate(new Date(), 'YYYY-MM-DD'),
+        controlRCPrimaria: false,
+        seguidordelineaAmateur: false,
+        minisumoRcAmateur: false,
+        minisumoAutonomoAmateur: false,
+        carreradeInsectosAmateur: false,
+        peleadeRobotsAmateur: false,
+        minisumoAutonomoProfesional: false,
+        minisumoRcProfesional: false,
+        microsumoProfesional: false,
+        seguidordelineaProfesional: false,
+        carreradeInsectosProfesional: false,
+        creatividadeInnovacionTecnologicaProyectos: false,
+        guerradeRobotsProfesional1Lb: false,
+        autoaControlRCBluetooth: false,
+        robotSoccer: false
+      }
+    };
+  },
+
+  created() {
+    this.participantesGet();
+  },
+
+  methods: {
+    async printCertificado(participante) {
+      let doc = new jspdf_es_min/* jsPDF */.kH('landscape', null, 'letter');
+      let logo = new Image();
+      logo.src = 'certificado.jpg';
+      let categorias = '';
+      categorias += participante.controlRCPrimaria == 1 ? " controlRCPrimaria," : '';
+      categorias += participante.seguidordelineaAmateur == 1 ? " seguidordelineaAmateur," : '';
+      categorias += participante.minisumoRcAmateur == 1 ? " minisumoRcAmateur," : '';
+      categorias += participante.minisumoAutonomoAmateur == 1 ? " minisumoAutonomoAmateur," : '';
+      categorias += participante.carreradeInsectosAmateur == 1 ? " carreradeInsectosAmateur," : '';
+      categorias += participante.peleadeRobotsAmateur == 1 ? " peleadeRobotsAmateur," : '';
+      categorias += participante.minisumoAutonomoProfesional == 1 ? " minisumoAutonomoProfesional," : '';
+      categorias += participante.minisumoRcProfesional == 1 ? " minisumoRcProfesional," : '';
+      categorias += participante.microsumoProfesional == 1 ? " microsumoProfesional," : '';
+      categorias += participante.seguidordelineaProfesional == 1 ? " seguidordelineaProfesional," : '';
+      categorias += participante.carreradeInsectosProfesional == 1 ? " carreradeInsectosProfesional," : '';
+      categorias += participante.creatividadeInnovacionTecnologicaProyectos == 1 ? " creatividadeInnovacionTecnologicaProyectos," : '';
+      categorias += participante.guerradeRobotsProfesional1Lb == 1 ? " guerradeRobotsProfesional1Lb," : '';
+      categorias += participante.autoaControlRCBluetooth == 1 ? " autoaControlRCBluetooth," : '';
+      categorias += participante.robotSoccer == 1 ? " robotSoccer," : '';
+
+      if (participante.nombre1 != null) {
+        doc.addImage(logo, 'JPEG', 0, 0, 280, 210);
+        doc.setFont('times');
+        doc.setFontSize(13, 'normal');
+        doc.text('Se otorga el presente certificado A:', 30, 70);
+        doc.setFontSize(20, 'bold');
+        doc.text(participante.nombre1, 140, 80, 'center');
+        doc.setFontSize(13, 'normal');
+        doc.text('Por la participación en Olimpiada Boliviana de Ciencia y Tecnología BALLIVIANITOBOT en calidad de:', 30, 90);
+        doc.setFontSize(20, 'bold');
+        doc.text(participante.categoria == null ? '' : participante.categoria, 140, 100, 'center');
+        doc.setFontSize(13, 'normal');
+        doc.text("Con las participaciones en la(s) categoría(s):" + categorias, 30, 110, {
+          maxWidth: 220,
+          align: "justify"
+        }); // to justify
+
+        let nom = participante.nombre1;
+        let opts = {
+          errorCorrectionLevel: 'M',
+          type: 'png',
+          quality: 0.95,
+          width: 100,
+          margin: 1,
+          color: {
+            dark: '#000000',
+            light: '#FFF'
+          }
+        };
+        let qrImage = await Certificadosvue_type_script_lang_js_QRCode.toDataURL("Nombre:" + nom + "\nCategoria: " + participante.categoria, opts);
+        doc.addImage(qrImage, 'png', 235, 135, 25, 25);
+      }
+
+      if (participante.nombre2 !== null) {
+        doc.addPage();
+        doc.addImage(logo, 'JPEG', 0, 0, 280, 210);
+        doc.setFont('times');
+        doc.setFontSize(13, 'normal');
+        doc.text('Se otorga el presente certificado A:', 30, 70);
+        doc.setFontSize(20, 'bold');
+        doc.text(participante.nombre2, 140, 80, 'center');
+        doc.setFontSize(13, 'normal');
+        doc.text('Por la participación en Olimpiada Boliviana de Ciencia y Tecnología BALLIVIANITOBOT en calidad de:', 30, 90);
+        doc.setFontSize(20, 'bold');
+        doc.text(participante.categoria == null ? '' : participante.categoria, 140, 100, 'center');
+        doc.setFontSize(13, 'normal');
+        doc.text("Con las participaciones en la(s) categoría(s):" + categorias, 30, 110, {
+          maxWidth: 220,
+          align: "justify"
+        }); // to justify
+
+        let nom = participante.nombre2;
+        let opts = {
+          errorCorrectionLevel: 'M',
+          type: 'png',
+          quality: 0.95,
+          width: 100,
+          margin: 1,
+          color: {
+            dark: '#000000',
+            light: '#FFF'
+          }
+        };
+        let qrImage = await Certificadosvue_type_script_lang_js_QRCode.toDataURL("Nombre:" + nom + "\nCategoria: " + participante.categoria, opts);
+        doc.addImage(qrImage, 'png', 235, 135, 25, 25);
+      }
+
+      if (participante.club != null) {
+        doc.addPage();
+        doc.addImage(logo, 'JPEG', 0, 0, 280, 210);
+        doc.setFont('times');
+        doc.setFontSize(13, 'normal');
+        doc.text('Se otorga el presente certificado A:', 30, 70);
+        doc.setFontSize(20, 'bold');
+        doc.text(participante.club, 140, 80, 'center');
+        doc.setFontSize(13, 'normal');
+        doc.text('Por la participación en Olimpiada Boliviana de Ciencia y Tecnología BALLIVIANITOBOT en calidad de:', 30, 90);
+        doc.setFontSize(20, 'bold');
+        doc.text(participante.categoria == null ? '' : participante.categoria, 140, 100, 'center');
+        doc.setFontSize(13, 'normal');
+        doc.text("Con las participaciones en la(s) categoría(s):" + categorias, 30, 110, {
+          maxWidth: 220,
+          align: "justify"
+        }); // to justify
+
+        let nom = participante.club;
+        let opts = {
+          errorCorrectionLevel: 'M',
+          type: 'png',
+          quality: 0.95,
+          width: 100,
+          margin: 1,
+          color: {
+            dark: '#000000',
+            light: '#FFF'
+          }
+        };
+        let qrImage = await Certificadosvue_type_script_lang_js_QRCode.toDataURL("Nombre:" + nom + "\nCategoria: " + participante.categoria, opts);
+        doc.addImage(qrImage, 'png', 235, 135, 25, 25);
+      }
+
+      doc.save('Certificado.pdf');
+    },
+
+    participantesGet() {
+      this.loading = true;
+      this.$api.get(`listparticipante`).then(res => {
+        this.loading = false;
+        this.participantes = res.data;
+      });
+    }
+
+  }
+});
+;// CONCATENATED MODULE: ./src/pages/Certificados.vue?vue&type=script&lang=js
+ 
+;// CONCATENATED MODULE: ./src/pages/Certificados.vue
+
+
+
+
+;
+const Certificados_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(Certificadosvue_type_script_lang_js, [['render',Certificadosvue_type_template_id_2fdc2713_render]])
+
+/* harmony default export */ const Certificados = (Certificados_exports_);
+;
+
+
+
+
+
+
+runtime_auto_import_default()(Certificadosvue_type_script_lang_js, 'components', {QPage: QPage/* default */.Z,QTable: QTable/* default */.Z,QBtn: QBtn/* default */.Z,QInput: QInput/* default */.Z,QIcon: QIcon/* default */.Z,QTd: QTd/* default */.Z});
 
 ;// CONCATENATED MODULE: ./src/router/routes.js
 
@@ -4380,9 +4878,10 @@ runtime_auto_import_default()(Creacionvue_type_script_lang_js, 'components', {QP
 
 
 
+
 const routes = [{
   path: '/',
-  component: () => Promise.all(/* import() */[__webpack_require__.e(736), __webpack_require__.e(985)]).then(__webpack_require__.bind(__webpack_require__, 38985)),
+  component: () => Promise.all(/* import() */[__webpack_require__.e(736), __webpack_require__.e(731)]).then(__webpack_require__.bind(__webpack_require__, 88731)),
   children: [{
     path: 'login',
     component: Login
@@ -4416,6 +4915,9 @@ const routes = [{
     meta: {
       requiresAuth: true
     }
+  }, {
+    path: 'certificados',
+    component: Certificados
   }]
 }, // Always leave this as last one,
 // but you can also remove it
@@ -5209,7 +5711,7 @@ webpackContext.id = 46700;
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames based on template
-/******/ 			return "js/" + chunkId + "." + {"862":"6fb3322a","985":"cb45c755"}[chunkId] + ".js";
+/******/ 			return "js/" + chunkId + "." + {"731":"c49572b0","862":"6fb3322a"}[chunkId] + ".js";
 /******/ 		};
 /******/ 	})();
 /******/ 	
@@ -5405,9 +5907,9 @@ webpackContext.id = 46700;
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, [736], () => (__webpack_require__(61204)))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, [736], () => (__webpack_require__(32840)))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=app.7693d104.js.map
+//# sourceMappingURL=app.039af48f.js.map

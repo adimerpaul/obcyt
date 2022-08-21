@@ -77,6 +77,15 @@
             <q-item-label caption>Control de competidores</q-item-label>
           </q-item-section>
         </q-item>
+        <q-item clickable exact to="certificados" >
+          <q-item-section avatar>
+            <q-icon name="o_print" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>Certificados</q-item-label>
+            <q-item-label caption>Descargar certificado</q-item-label>
+          </q-item-section>
+        </q-item>
         <q-item clickable exact to="consultas" v-if="store.isLoggedIn&&store.user.tipo=='ADMINISTRADOR'">
           <q-item-section avatar>
             <q-icon name="o_print" />

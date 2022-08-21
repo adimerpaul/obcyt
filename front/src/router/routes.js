@@ -5,6 +5,7 @@ import Producer from "pages/Producer";
 import Consultas from "pages/Consultas";
 import Competidor from "pages/Competidor";
 import Creacion from "pages/Creacion";
+import Certificados from "pages/Certificados";
 const routes = [
   {
     path: '/',
@@ -16,6 +17,7 @@ const routes = [
       { path: 'competidores', component: Competidor,meta: {requiresAuth: true} },
       { path: 'consultas', component: Consultas,meta: {requiresAuth: true} },
       { path: 'creacion', component: Creacion,meta: {requiresAuth: true} },
+      { path: 'certificados', component: Certificados},
     ]
   },
 

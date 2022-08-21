@@ -19,7 +19,8 @@ use Illuminate\Support\Facades\Route;
 //});
 Route::post('/login',[\App\Http\Controllers\UserController::class,'login']);
 
-Route::group(['middleware'=>'auth:sanctum'],function (){
+    Route::get('listparticipante',[\App\Http\Controllers\ParticipanteController::class,'listparticipante']);
+    Route::group(['middleware'=>'auth:sanctum'],function (){
     Route::post('/logout',[\App\Http\Controllers\UserController::class,'logout']);
     Route::post('/me',[\App\Http\Controllers\UserController::class,'me']);
     Route::post('/updatePassword/{user}',[\App\Http\Controllers\UserController::class,'updatePassword']);

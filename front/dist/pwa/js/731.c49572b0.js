@@ -1,7 +1,7 @@
 "use strict";
-(globalThis["webpackChunkfront"] = globalThis["webpackChunkfront"] || []).push([[985],{
+(globalThis["webpackChunkfront"] = globalThis["webpackChunkfront"] || []).push([[731],{
 
-/***/ 38985:
+/***/ 88731:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
@@ -16,7 +16,7 @@ __webpack_require__.d(__webpack_exports__, {
 var runtime_core_esm_bundler = __webpack_require__(59835);
 // EXTERNAL MODULE: ./node_modules/@vue/shared/dist/shared.esm-bundler.js
 var shared_esm_bundler = __webpack_require__(86970);
-;// CONCATENATED MODULE: ./node_modules/@quasar/app-webpack/lib/webpack/loader.js.transform-quasar-imports.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-2.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/@quasar/app-webpack/lib/webpack/loader.vue.auto-import-quasar.js??ruleSet[0].use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[1]!./src/layouts/MainLayout.vue?vue&type=template&id=1d3aeb1a
+;// CONCATENATED MODULE: ./node_modules/@quasar/app-webpack/lib/webpack/loader.js.transform-quasar-imports.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-2.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/@quasar/app-webpack/lib/webpack/loader.vue.auto-import-quasar.js??ruleSet[0].use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[1]!./src/layouts/MainLayout.vue?vue&type=template&id=33732594
 
 
 const _hoisted_1 = /*#__PURE__*/(0,runtime_core_esm_bundler/* createTextVNode */.Uk)("Salir");
@@ -37,17 +37,21 @@ const _hoisted_8 = /*#__PURE__*/(0,runtime_core_esm_bundler/* createTextVNode */
 
 const _hoisted_9 = /*#__PURE__*/(0,runtime_core_esm_bundler/* createTextVNode */.Uk)("Control de competidores");
 
-const _hoisted_10 = /*#__PURE__*/(0,runtime_core_esm_bundler/* createTextVNode */.Uk)("Consultas");
+const _hoisted_10 = /*#__PURE__*/(0,runtime_core_esm_bundler/* createTextVNode */.Uk)("Certificados");
 
-const _hoisted_11 = /*#__PURE__*/(0,runtime_core_esm_bundler/* createTextVNode */.Uk)("Consultas de registros");
+const _hoisted_11 = /*#__PURE__*/(0,runtime_core_esm_bundler/* createTextVNode */.Uk)("Descargar certificado");
 
-const _hoisted_12 = /*#__PURE__*/(0,runtime_core_esm_bundler/* createTextVNode */.Uk)("Impresion");
+const _hoisted_12 = /*#__PURE__*/(0,runtime_core_esm_bundler/* createTextVNode */.Uk)("Consultas");
 
-const _hoisted_13 = /*#__PURE__*/(0,runtime_core_esm_bundler/* createTextVNode */.Uk)("Todos los carnets y credenciales");
+const _hoisted_13 = /*#__PURE__*/(0,runtime_core_esm_bundler/* createTextVNode */.Uk)("Consultas de registros");
 
-const _hoisted_14 = /*#__PURE__*/(0,runtime_core_esm_bundler/* createTextVNode */.Uk)("Salir");
+const _hoisted_14 = /*#__PURE__*/(0,runtime_core_esm_bundler/* createTextVNode */.Uk)("Impresion");
 
-const _hoisted_15 = /*#__PURE__*/(0,runtime_core_esm_bundler/* createTextVNode */.Uk)("Salir del sistema");
+const _hoisted_15 = /*#__PURE__*/(0,runtime_core_esm_bundler/* createTextVNode */.Uk)("Todos los carnets y credenciales");
+
+const _hoisted_16 = /*#__PURE__*/(0,runtime_core_esm_bundler/* createTextVNode */.Uk)("Salir");
+
+const _hoisted_17 = /*#__PURE__*/(0,runtime_core_esm_bundler/* createTextVNode */.Uk)("Salir del sistema");
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_q_btn = (0,runtime_core_esm_bundler/* resolveComponent */.up)("q-btn");
@@ -235,11 +239,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
             _: 1
           })]),
           _: 1
-        })) : (0,runtime_core_esm_bundler/* createCommentVNode */.kq)("", true), $data.store.isLoggedIn && $data.store.user.tipo == 'ADMINISTRADOR' ? ((0,runtime_core_esm_bundler/* openBlock */.wg)(), (0,runtime_core_esm_bundler/* createBlock */.j4)(_component_q_item, {
-          key: 4,
+        })) : (0,runtime_core_esm_bundler/* createCommentVNode */.kq)("", true), (0,runtime_core_esm_bundler/* createVNode */.Wm)(_component_q_item, {
           clickable: "",
           exact: "",
-          to: "consultas"
+          to: "certificados"
         }, {
           default: (0,runtime_core_esm_bundler/* withCtx */.w5)(() => [(0,runtime_core_esm_bundler/* createVNode */.Wm)(_component_q_item_section, {
             avatar: ""
@@ -261,11 +264,11 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
             _: 1
           })]),
           _: 1
-        })) : (0,runtime_core_esm_bundler/* createCommentVNode */.kq)("", true), $data.store.isLoggedIn && $data.store.user.tipo == 'ADMINISTRADOR' ? ((0,runtime_core_esm_bundler/* openBlock */.wg)(), (0,runtime_core_esm_bundler/* createBlock */.j4)(_component_q_item, {
-          key: 5,
+        }), $data.store.isLoggedIn && $data.store.user.tipo == 'ADMINISTRADOR' ? ((0,runtime_core_esm_bundler/* openBlock */.wg)(), (0,runtime_core_esm_bundler/* createBlock */.j4)(_component_q_item, {
+          key: 4,
           clickable: "",
           exact: "",
-          to: "creacion"
+          to: "consultas"
         }, {
           default: (0,runtime_core_esm_bundler/* withCtx */.w5)(() => [(0,runtime_core_esm_bundler/* createVNode */.Wm)(_component_q_item_section, {
             avatar: ""
@@ -287,6 +290,32 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
             _: 1
           })]),
           _: 1
+        })) : (0,runtime_core_esm_bundler/* createCommentVNode */.kq)("", true), $data.store.isLoggedIn && $data.store.user.tipo == 'ADMINISTRADOR' ? ((0,runtime_core_esm_bundler/* openBlock */.wg)(), (0,runtime_core_esm_bundler/* createBlock */.j4)(_component_q_item, {
+          key: 5,
+          clickable: "",
+          exact: "",
+          to: "creacion"
+        }, {
+          default: (0,runtime_core_esm_bundler/* withCtx */.w5)(() => [(0,runtime_core_esm_bundler/* createVNode */.Wm)(_component_q_item_section, {
+            avatar: ""
+          }, {
+            default: (0,runtime_core_esm_bundler/* withCtx */.w5)(() => [(0,runtime_core_esm_bundler/* createVNode */.Wm)(_component_q_icon, {
+              name: "o_print"
+            })]),
+            _: 1
+          }), (0,runtime_core_esm_bundler/* createVNode */.Wm)(_component_q_item_section, null, {
+            default: (0,runtime_core_esm_bundler/* withCtx */.w5)(() => [(0,runtime_core_esm_bundler/* createVNode */.Wm)(_component_q_item_label, null, {
+              default: (0,runtime_core_esm_bundler/* withCtx */.w5)(() => [_hoisted_14]),
+              _: 1
+            }), (0,runtime_core_esm_bundler/* createVNode */.Wm)(_component_q_item_label, {
+              caption: ""
+            }, {
+              default: (0,runtime_core_esm_bundler/* withCtx */.w5)(() => [_hoisted_15]),
+              _: 1
+            })]),
+            _: 1
+          })]),
+          _: 1
         })) : (0,runtime_core_esm_bundler/* createCommentVNode */.kq)("", true), $data.store.isLoggedIn ? ((0,runtime_core_esm_bundler/* openBlock */.wg)(), (0,runtime_core_esm_bundler/* createBlock */.j4)(_component_q_item, {
           key: 6,
           clickable: "",
@@ -302,12 +331,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
             _: 1
           }), (0,runtime_core_esm_bundler/* createVNode */.Wm)(_component_q_item_section, null, {
             default: (0,runtime_core_esm_bundler/* withCtx */.w5)(() => [(0,runtime_core_esm_bundler/* createVNode */.Wm)(_component_q_item_label, null, {
-              default: (0,runtime_core_esm_bundler/* withCtx */.w5)(() => [_hoisted_14]),
+              default: (0,runtime_core_esm_bundler/* withCtx */.w5)(() => [_hoisted_16]),
               _: 1
             }), (0,runtime_core_esm_bundler/* createVNode */.Wm)(_component_q_item_label, {
               caption: ""
             }, {
-              default: (0,runtime_core_esm_bundler/* withCtx */.w5)(() => [_hoisted_15]),
+              default: (0,runtime_core_esm_bundler/* withCtx */.w5)(() => [_hoisted_17]),
               _: 1
             })]),
             _: 1
@@ -434,4 +463,4 @@ runtime_auto_import_default()(MainLayoutvue_type_script_lang_js, 'components', {
 /***/ })
 
 }]);
-//# sourceMappingURL=985.cb45c755.js.map
+//# sourceMappingURL=731.c49572b0.js.map
