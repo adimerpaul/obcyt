@@ -4881,7 +4881,7 @@ runtime_auto_import_default()(Certificadosvue_type_script_lang_js, 'components',
 
 const routes = [{
   path: '/',
-  component: () => Promise.all(/* import() */[__webpack_require__.e(736), __webpack_require__.e(731)]).then(__webpack_require__.bind(__webpack_require__, 88731)),
+  component: () => Promise.all(/* import() */[__webpack_require__.e(736), __webpack_require__.e(745)]).then(__webpack_require__.bind(__webpack_require__, 75745)),
   children: [{
     path: 'login',
     component: Login
@@ -5711,7 +5711,7 @@ webpackContext.id = 46700;
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames based on template
-/******/ 			return "js/" + chunkId + "." + {"731":"c49572b0","862":"6fb3322a"}[chunkId] + ".js";
+/******/ 			return "js/" + chunkId + "." + {"745":"254fe80a","862":"6fb3322a"}[chunkId] + ".js";
 /******/ 		};
 /******/ 	})();
 /******/ 	
@@ -5912,4 +5912,4 @@ webpackContext.id = 46700;
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=app.039af48f.js.map
+//# sourceMappingURL=app.9a0f93b0.js.map

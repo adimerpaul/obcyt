@@ -79,7 +79,7 @@
         </q-item>
         <q-item clickable exact to="certificados" >
           <q-item-section avatar>
-            <q-icon name="o_print" />
+            <q-icon name="o_workspace_premium" />
           </q-item-section>
           <q-item-section>
             <q-item-label>Certificados</q-item-label>
