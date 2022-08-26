@@ -17,6 +17,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/facebook-callback', function () {
-    return "a";
+
+Route::get('/login-facebook', function () {
+    return Socialite::driver('facebook')->redirect();
 });
+Route::get('/facebook-callback', function () {
+    $user = Socialite::driver('facebook')->user();
+    dd($user);
+});
+//Route::get('/auth/callback', function () {
+//    $user = Socialite::driver('github')->user();
+//
+//    // $user->token
+//});
